@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week3:Challenging</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 1 : Challenging Quiz</h1>
+        <img src="corono.png">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1.What is the Coronavirus or the Covid19?</p>
+        <p >Answer:<span id="a1"> </span></p>
+        <p class="qa">2.0n which day was Covid19 declared the National State Disaster in South Africa</p>
+        <p >Answer:<span id="a2"> 08 March 2020</p>
+        <p class="qa">3. What travelling restrictions were announced on that date? </p>
+        <p >Answer:<span id="a3"> Ban travelling to countries with high risk of Covid19 </span></p>
+        <p class="qa">4. How many borders have been closed since the 08 March 2020?</p>
+        <p >Answer:<span id="a4">35 out of 53 Land boarders with 5 of the 6 neighbouring countries have been closed
+        </span></p>
+        <p class="qa">5. What is the limit number of people in social gatherings</p>
+        <p>Answer:<span id="a5">less than 100 </span></p>
+        <p class="qa">6. What day was set for schools to close on? </p>
+        <p>Answer:<span id="a6">18th of March 2020</span></p>
+        <p class="qa">7.Who addressed the Nation when Covid19 was declared a National State Disaster? </p>
+        <p >Answer:<span id="a7">The President</span></p>
+        <p class="qa">8. </p>
+        <p >Answer<span id="a8"></span></p>
+        <p class="qa">9.</p>
+        <p >Answer<span id="a9"></span></p>
+        <p class="qa">10.</p>
+        <p>Answer:<span id="a10"></p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"What is the Coronavirus or the Covid19?",
+            ans:["It's a virus like flue and swine flue orignated in India","It's a virus attacking  the Coronary System in Humans","Coronaviruses are a large family of viruses which may cause illnesses that are known to cause infections that impacts on your lungs and your breathing","It's the new form of Human Immuno Deficiency Virus"],
+            right:"2"};
+        var que2={que:"On which day was Covid19 declared the National State Disaster in South Africa",
+            ans:["29 February 2020","25 December 2019","01 January 2020","08 March 2020"],
+            right:"3"};
+        var que3={que:" What travelling restrictions were announced on that date? ",
+            ans:["Ban travelling to countries with high risk of Covid19","Only adults should travel","No more travelling to outside the country","No one travells alone"],    right:"0"};
+        var que4={que:"How many borders have been closed since the 08 March 2020?",
+            ans:["No border has been closed","35 out of 53 Land boarders with 5 of the 6 neighbouring countries have been closed","90","35 out of 83 Land boarders with 9 of the 6 neighbouring countries have been closed"],
+            right:"1"};
+        var que5={que:"What is limit  number of people in social gatherings?",
+            ans:["Only 20","No limit","More than 100","less than 100"],
+            right:"3"};
+        var que6={que:"What day was set for schools to close on?",
+            ans:["18th of March 2020","Today","20 March 2020","01 March 2020"],
+            right:"0"};
+        var que7={que:"Who addressed the Nation when Covid19 was declared a National State Disaster?",
+            ans:["The Deputy mister of Home Affairs","The Former President of South","The President","The minister of Health"],right:"2"};
+        var que8={que:"",
+            ans:["","","",""],right:"3"};
+        var que9={que:"",
+            ans:["","","",""],right:"0"};
+        var que10={que:"",
+            ans:["","","",""],right:"0"};
+
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+</body>
+
+</html>
