@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Week3:Challenging</title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,7 +13,7 @@
 <body>
     <div class="front">
         <h1>Week 1 : Challenging Quiz</h1>
-        <img src="corono.png">
+        <img src="image.png" class="responsive">
         <button type="button" id="start">Start</button>    
     </div>
     <div class="quiz">
@@ -33,7 +35,7 @@
     </div>
     <div class="answers">
         <p class="qa">1.What is the Coronavirus or the Covid19?</p>
-        <p >Answer:<span id="a1"> </span></p>
+        <p >Answer:<span id="a1">Coronaviruses are a large family of viruses which may cause illnesses that are known to cause infections that impacts on your lungs and your breathing </span></p>
         <p class="qa">2.0n which day was Covid19 declared the National State Disaster in South Africa</p>
         <p >Answer:<span id="a2"> 08 March 2020</p>
         <p class="qa">3. What travelling restrictions were announced on that date? </p>
@@ -47,12 +49,12 @@
         <p>Answer:<span id="a6">18th of March 2020</span></p>
         <p class="qa">7.Who addressed the Nation when Covid19 was declared a National State Disaster? </p>
         <p >Answer:<span id="a7">The President</span></p>
-        <p class="qa">8. </p>
-        <p >Answer<span id="a8"></span></p>
-        <p class="qa">9.</p>
-        <p >Answer<span id="a9"></span></p>
-        <p class="qa">10.</p>
-        <p>Answer:<span id="a10"></p>
+        <p class="qa">8.UNICEF will work which main organization and partners for a coordinated multi-sectoral response, engaging the community to protect children and their families from exposure to novel coronavirus (2019-nCoV)? </p>
+        <p >Answer<span id="a8">World Health Organization</span></p>
+        <p class="qa">9. Which are the 2 main objectives and priority areas for UNICEF intervention on Covid19?</p>
+        <p >Answer<span id="a9">Risk Reduction & Preparedness and Response</span></p>
+        <p class="qa">10. Who will UNICEF consult with in identifying priority countries?</p>
+        <p>Answer:<span id="a10">Country Offices (CO) and the nCoV Secretariat at HQ</p>
             <br>
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
     </div>
@@ -76,7 +78,7 @@
         var que4={que:"How many borders have been closed since the 08 March 2020?",
             ans:["No border has been closed","35 out of 53 Land boarders with 5 of the 6 neighbouring countries have been closed","90","35 out of 83 Land boarders with 9 of the 6 neighbouring countries have been closed"],
             right:"1"};
-        var que5={que:"What is limit  number of people in social gatherings?",
+        var que5={que:"What is the limit  number of people in social gatherings?",
             ans:["Only 20","No limit","More than 100","less than 100"],
             right:"3"};
         var que6={que:"What day was set for schools to close on?",
@@ -84,12 +86,12 @@
             right:"0"};
         var que7={que:"Who addressed the Nation when Covid19 was declared a National State Disaster?",
             ans:["The Deputy mister of Home Affairs","The Former President of South","The President","The minister of Health"],right:"2"};
-        var que8={que:"",
-            ans:["","","",""],right:"3"};
-        var que9={que:"",
-            ans:["","","",""],right:"0"};
-        var que10={que:"",
-            ans:["","","",""],right:"0"};
+        var que8={que:"UNICEF will work which main organization and partners for a coordinated multi-sectoral response, engaging the community to protect children and their families from exposure to novel coronavirus (2019-nCoV)?",
+            ans:["World Wild Life Protection","Google","South African Broadcasting Commission","World Health Organization"],right:"3"};
+        var que9={que:"Which are the 2 main objectives and priority areas for UNICEF intervention on Covid19?",
+            ans:["Risk Reduction & Preparedness and Response ","Climate change solutions and interventions","Child in war and conflict","Girls and Women's rights"],right:"0"};
+        var que10={que:"Who will UNICEF consult with in identifying priority countries?",
+            ans:["Global Health Department","Google","Country Offices (CO) and the nCoV Secretariat at HQ","Chinnese Authority"],right:"2"};
 
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
@@ -197,3 +199,5 @@
 </body>
 
 </html>
+
+
