@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week3:Easy</title>
+    <title>Week 3: Easy</title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
@@ -13,6 +13,7 @@
 <body>
     <div class="front">
         <h1>Week 3 : Easy Quiz</h1>
+        <p>Most of the questions will be based on the Covid19 brief from IASC(Inter Agency Standing Committee),Worldwide Statistics on Covid19 and Religous leaders' respone to Covid19 in South Africa.</p>
         <img src="image.png" class="responsive">
         <button type="button" id="start">Start</button>    
     </div>
@@ -34,26 +35,26 @@
         <button type="button" id="an">Click here to see answers</button>
     </div>
     <div class="answers">
-        <p class="qa">1.</p>
-        <p >Answer:<span id="a1"> </span></p>
-        <p class="qa">2.</p>
-        <p >Answer:<span id="a2"> </p>
-        <p class="qa">3. </p>
-        <p >Answer:<span id="a3"> </span></p>
-        <p class="qa">4.</p>
-        <p >Answer:<span id="a4"> </span></p>
-        <p class="qa">5. </p>
-        <p>Answer:<span id="a5"> </span></p>
-        <p class="qa">6.  </p>
-        <p>Answer:<span id="a6"></span></p>
-        <p class="qa">7. </p>
-        <p >Answer:<span id="a7"></span></p>
-        <p class="qa">8. </p>
-        <p >Answer<span id="a8"></span></p>
-        <p class="qa">9.</p>
-        <p >Answer<span id="a9"></span></p>
-        <p class="qa">10.</p>
-        <p>Answer:<span id="a10"></p>
+        <p class="qa">1.On the 18th of March 2020 , China declared what for the First Time (TIP:  it is related to Covid19 cases) ?</p>
+        <p >Answer:<span id="a1"> Zero Covid19 positive Cases </span></p>
+        <p class="qa">2. Italy has had more deaths from Covid19 than China based on the data reported on the 20th March 2020, is this statement true?</p>
+        <p >Answer:<span id="a2"> True  </p>
+        <p class="qa">3. Which country has been reported (on the 18 March 2020) to have the highest number of deaths on a single day , worldwide due to Covid19 ?  </p>
+        <p >Answer:<span id="a3"> Italy </span></p>
+        <p class="qa">4. On which date and day of the week, did our president  meet with the leaders of diverse communities of faith concerning Covdi19 impacts? </p>
+        <p >Answer:<span id="a4"> 19 March 2020 Thursday</span></p>
+        <p class="qa">5. What was the purpose of the meeting? </p>
+        <p>Answer:<span id="a5"> To reinforce the national response to the Coronavirus outbreak and to ensure that the national effort to combat and contain the virus is inclusive. </span></p>
+        <p class="qa">6.  Which major religous events are cancelled by the Methodist Church as a result of the Covid19 outbreak in South Africa?</p>
+        <p>Answer:<span id="a6">Celebration of the Good Friday and Easter Sunday services  </span></p>
+        <p class="qa">7.  Which major religous events is cancelled by the Muslim Judicial Council (MJC) as a result of the Covid19 outbreak in South Africa? </p>
+        <p >Answer:<span id="a7">Friday prayer</span></p>
+        <p class="qa">8.  Which major religous event is cancelled by the Zion Christian Church (ZCC) as a result of the Covid19 outbreak in South Africa?</p>
+        <p >Answer<span id="a8">  Annual Moria pilgrimage</span></p>
+        <p class="qa">9.According to the brief by IASC(Inter Agency Standing Committee),common responses of people affected (both directly and indirectly by Covid19) might include:</p>
+        <p >Answer<span id="a9"> All mentioned</span></p>
+        <p class="qa">10. According to a brief by the IASC(Inter Agency Standing Committee),stressors particular to the COVID-19 outbreak include:</p>
+        <p>Answer:<span id="a10"> 1st and 2nd options and few others not mentioned</p>
             <br>
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
     </div>
@@ -66,31 +67,31 @@
         var right;
         var i=0;
         var score=0;
-        var que1={que:"",
-            ans:["","",""],
+        var que1={que:" On the 18th of March 2020 , China declared what for the First Time (TIP:  it is related to Covid19 cases) ?",
+            ans:["The highest Covid19 deaths in 1 day ","Only 10 deaths from Covid19","Zero Covid19 positive Case","Only 1 positive case"],
             right:"2"};
-        var que2={que:"",
-            ans:["","","",""],
+        var que2={que:" Italy has had more deaths from Covid19 than China based on the data reported on the 20th March 2020, is this statement true?",
+            ans:["China death cases are leading worldwide","Not true","I don't know","True"],
             right:"3"};
-        var que3={que:" ",
-            ans:["","","",""],    right:"0"};
-        var que4={que:"",
-            ans:["","","",""],
+        var que3={que:"  Which country has been reported (on the 18 March 2020) to have the highest number of deaths on a single day , worldwide due to Covid19 ? ",
+            ans:["Italy ","China","Spain","South Africa"],    right:"0"};
+        var que4={que:" On which date and day of the week, did our president  meet with the leaders of diverse communities of faith concerning Covdi19 impacts?",
+            ans:["02 March 2020,Sunday","19 March 2020 Thursday","19 March 2020 Friday","12 April 2020 Sunday"],
             right:"1"};
-        var que5={que:"",
-            ans:["","","",""],
+        var que5={que:"What was the purpose of the meeting?",
+            ans:["To confirm the number of Covid19 positive cases","There was no meeting","To try and work out a new plan against the 100 people gathering rule ","To reinforce the national response to the Coronavirus outbreak and to ensure that the national effort to combat and contain the virus is inclusive."],
             right:"3"};
-        var que6={que:"",
-            ans:["","","",""],
+        var que6={que:"Which major religous events are cancelled by the Methodist Church as a result of the Covid19 outbreak in South Africa?",
+            ans:["Celebration of the Good Friday and Easter Sunday services","Annual Moria pilgrimage","Friday prayer","Celebration of Christmas holidays"],
             right:"0"};
-        var que7={que:"",
-            ans:["","","",""],right:"2"};
-        var que8={que:"",
-            ans:["","","",""],right:"3"};
-        var que9={que:"",
-            ans:["","","",""],right:"0"};
-        var que10={que:"",
-            ans:["","","",""],right:"0"};
+        var que7={que:"   Which major religous events is cancelled by the Muslim Judicial Council (MJC) as a result of the Covid19 outbreak in South Africa? ",
+            ans:["Celebration of the Good Friday and Easter Sunday services","Celebration of Christmas day","Friday prayer","Annual Moria Pilgrimage"],right:"2"};
+        var que8={que:"Which major religous event is cancelled by the Zion Christian Church (ZCC) as a result of the Covid19 outbreak in South Africa?",
+            ans:["Celebration of the Good Friday and Easter Sunday services","Friday Prayer","Celebration of Christmas day","Annual Moria pilgrimage"],right:"3"};
+        var que9={que:" According to the brief by IASC(Inter Agency Standing Committee),common responses of people affected (both directly and indirectly by Covid19) might include:",
+            ans:["Fear of being separated from loved ones and caregivers due to quarantine regime","Fear of losing livelihoods, not being able to work during isolation, and of being dismissed from work","Feelings of helplessness, boredom, loneliness and depression due to being isolated","All mentioned"],right:"3"};
+        var que10={que:"According to a brief by the IASC(Inter Agency Standing Committee),stressors particular to the COVID-19 outbreak include:",
+            ans:["1st and 2nd options and few others not mentioned","Risk of being infected and infecting others, especially if the transmissionmode of COVID-19 is not 100% clear","Common symptoms of other health problems (e.g. a fever) can be mistaken for COVID-19 and lead to fear of being infected","None Mentioned"],right:"0"};
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
         $("#start").click(function(){
@@ -149,10 +150,10 @@
                 $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
             }
             else if(score<8){
-                $(".message").text("Good, you know quite a bit. But don't stop keeping yourself informed.");
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
             }
             else{
-                $(".message").text("Amazing! you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
             }
         }
         $("#an").click(function(){
