@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week4: Easy</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 4 : Easy Quiz</h1>
+        <p>Most of the questions will be based on the statement by the president on escalation of measures to combat COVID-19 epidemic.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. What is the nation's fundamental task at the moment, according to the president in his address?</p>
+        <p >Answer:<span id="a1">Our fundamental task at this moment is to contain the spread of the disease</span></p>
+        <p class="qa">2. According to the president, flattening the curve of infections means what? </p>
+        <p >Answer:<span id="a2"> Doing everything within our means to reduce the overall number of infections and to delay the spread of infection over a longer period </p>
+        <p class="qa">3. Essentially, who in this country needs to adhere strictly – and without exception – to the regulations that have already been put in place?</p>
+        <p >Answer:<span id="a3">Every person </span></p>
+        <p class="qa">4. The number of people infected will rapidly increase, why is this is extremely dangerous for a population like ours?</p>
+        <p >Answer:<span id="a4">Our population has a  large number of people with suppressed immunity because of HIV and TB, and high levels of poverty and malnutrition.</span></p>
+        <p class="qa">5. What has South Africa learnt from the experiences of other countries?</p>
+        <p>Answer:<span id="a5">That the countries that have acted swiftly and dramatically have been far more effective in controlling the spread of the disease. </span></p>
+        <p class="qa">6.  Which group has decided to enforce a nation-wide lockdown from midnight on Thursday 26 March?</p>
+        <p>Answer:<span id="a6">National Coronavirus Command Council</span></p>
+        <p class="qa">7.What is the main reason behind this decisive measure (nation wide-lockdown)? </p>
+        <p >Answer:<span id="a7">It is to save millions of South Africans from this Covid-19 infection and save the lives of hundreds of thousands of people.</span></p>
+        <p class="qa">8.In terms of which act is the nation-wide lockdown enacted ? </p>
+        <p >Answer<span id="a8">Disaster Management Act</span></p>
+        <p class="qa">9. From when until when are all South Africans required to stay at home?</p>
+        <p >Answer<span id="a9">From midnight on Thursday 26 March until midnight on Thursday 16 April</span></p>
+        <p class="qa">10. Which group of people that are necessary for our response to the pandemic will be exempted from this nation-wide lockdown?</p>
+        <p>Answer:<span id="a10">All mentioned</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"What is the nation's fundamental task at the moment, according to the president in his address?",
+            ans:["The Nation's fundamental task is to identify who tested positive for Covid19","There is no fundamental task at the national level","Our fundamental task at this moment is to contain the spread of the disease","The nation's fundamental task is to supply Covid-19 testing kits to every one"],
+            right:"2"};
+        var que2={que:"According to the president, flattening the curve of infections means what? ",
+            ans:["Drawing curves of the infections on a flat surface","Making the curves flat so there won't be infections","Plotting some mathematical curves to show the infection trends","Doing everything within our means to reduce the overall number of infections and to delay the spread of infection over a longer period"],
+            right:"3"};
+        var que3={que:" Essentially, who in this country needs to adhere strictly – and without exception – to the regulations that have already been put in place?",
+            ans:["Every person","Only those who tested positive for Covid19","Only those with suppressed immunune systems","Only those who travelled abroad within the last 2 months."],    right:"0"};
+        var que4={que:"The number of people infected will rapidly increase, why is this is extremely dangerous for a population like ours?",
+            ans:["Because most of our population is not informed about Covid19 ","Our population has a  large number of people with suppressed immunity because of HIV and TB, and high levels of poverty and malnutrition.","Because our population has a large number of  males ","Our population is dominated by African black race"],
+            right:"1"};
+        var que5={que:"What has South Africa learnt from the experiences of other countries?",
+            ans:["That other countries were not putting enough measures in place to curb the spread of Covid 19","That other countries used private hospitals to serve the public","That other countries have the resources to build hospitals in 10 days","That the countries that have acted swiftly and dramatically have been far more effective in controlling the spread of the disease. "],
+            right:"3"};
+        var que6={que:" Which group has decided to enforce a nation-wide lockdown from midnight on Thursday 26 March?",
+            ans:["National Coronavirus Command Council","The Economic Freedom Fighters","The department of Health","The South African Medical Reasearch Team"],
+            right:"0"};
+        var que7={que:"What is the main reason behind this decisive measure (nation wide-lockdown)? ",
+            ans:["To keep out country free of the Coronavirus ","To keep foreigners out of South Africa","It is to save millions of South Africans from this Covid-19 infection and save the lives of hundreds of thousands of people.","To save money"],right:"2"};
+        var que8={que:"In terms of which act is the nation-wide lockdown enacted ?",
+            ans:["The Consumer Act","The Information Protection Privay Act","Th Financial Act","The Disaster Management Act"],right:"3"};
+        var que9={que:"From when until when are all South Africans required to stay at home?",
+            ans:["From midnight on Thursday 26 March until midnight on Thursday 16 April","From today until tomorrow","From Monday next week until the end of April","24TH of March  2020 until end of April 2020"],right:"0"};
+        var que10={que:" Which group of people that are necessary for our response to the pandemic will be exempted from this nation-wide lockdown?",
+            ans:["Health workers in the public and private sectors","Emergency personnel","Security Services Personnel","All mentioned"],right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
