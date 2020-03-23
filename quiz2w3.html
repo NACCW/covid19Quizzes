@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week3:Normal</title>
+    <title>Week3: Normal</title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
     <div class="front">
         <h1>Week 3 : Normal Quiz</h1>
-       
+        <p>Most of the questions will be based on the Covid19 brief from IASC(Inter Agency Standing Committee),National Statistics on Covid19 and Consumer responses to Covid19 in South Africa.</p>
         <img src="image.png" class="responsive">
         
         <button type="button" id="start">Start</button>    
@@ -36,12 +36,12 @@
         <button type="button" id="an">Click here to see answers</button>
     </div>
     <div class="answers">
-        <p class="qa">1.</p>
-        <p >Answer:<span id="a1"> </span></p>
-        <p class="qa">2.</p>
+        <p class="qa">1.According to the Covid19 brief from the IASC(Inter Agency Standing Committee), frontline  healthcare workers (including nurses, doctors, ambulance drivers, case identifiers, and others) may experience which type of stressors during this COVID-19 outbreak?</p>
+        <p >Answer:<span id="a1"> All mentioned</span></p>
+        <p class="qa">2. ASK ABOUT TRASMISSION TYPE</p>
         <p >Answer:<span id="a2"> </p>
-        <p class="qa">3. </p>
-        <p >Answer:<span id="a3"> </span></p>
+        <p class="qa">3. According to the Covid19 brief from the IASC(Inter Agency Standing Committee), what other 3 things contribute to fears and reactions in the population during the Covid19 outbreak ?</p>
+        <p >Answer:<span id="a3"> Lack of knowledge,rumours and misinformation</span></p>
         <p class="qa">4.</p>
         <p >Answer:<span id="a4"> </span></p>
         <p class="qa">5. </p>
@@ -68,14 +68,14 @@
         var right;
         var i=0;
         var score=0;
-        var que1={que:"",
-            ans:["","",""],
-            right:"2"};
+        var que1={que:"According to the Covid19 brief from the IASC(Inter Agency Standing Committee), frontline  healthcare workers (including nurses, doctors, ambulance drivers, case identifiers, and others) may experience which type of stressors during this COVID-19 outbreak?",
+            ans:["Stigmatization towards those working with COVID-19 patients and their remains","Insufficient personal or energy capacity to implement basic self-care","Insufficient information about the long-term exposure to individuals infected by COVID-19","All mentioned"],
+            right:"3"};
         var que2={que:"",
             ans:["","","",""],
             right:"3"};
-        var que3={que:" ",
-            ans:["","","",""],    right:"0"};
+        var que3={que:" According to the Covid19 brief from the IASC(Inter Agency Standing Committee), what other 3 things contribute to fears and reactions in the population during the Covid19 outbreak ?",
+            ans:["Lack of knowledge,rumours and misinformation","fake news, internet and gossip","Lack on information only","Lack of information and misinformation only"],    right:"0"};
         var que4={que:"",
             ans:["","","",""],
             right:"1"};
