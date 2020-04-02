@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week4:Changelling</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 4 : Quiz</h1>
+        <p>Most of the questions will be based the statements addressed by the President on the escalation of measures to combat COVID-19 epidemic.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. What is the government going to do to ensure that hospitals are not overwhelmed?</p>
+        <p >Answer:<span id="a1">To ensure that hospitals are not overwhelmed, a system will be put in place for ‘centralised patient management’ for severe cases and ‘decentralised primary care’ for mild cases</span></p>
+        <p class="qa">2. How will the government support the  informal settlements and rural communities without reliable water sources? </p>
+        <p >Answer:<span id="a2">Provisions of emergency water supplies will be made– using water storage tanks, water tankers, boreholes and communal standpipes. </p>
+        <p class="qa">3. What fund is set up and focuses on efforts to combat the spread of the virus, helping to track the spread, care for those who are ill and support those whose lives are disrupted?</p>
+        <p >Answer:<span id="a3"> Solidarity Fund</span></p>
+        <p class="qa">4. Who can contribute to this fund?</p>
+        <p >Answer:<span id="a4">All mentioned</span></p>
+        <p class="qa">5. Who is the chairperson and the deputy chairperson of the fund?</p>
+        <p>Answer:<span id="a5">Chairperson is Ms Gloria Serobe and deputy chairperson is Mr Adrian Enthoven</span></p>
+        <p class="qa">6. The Fund will be administered by a reputable team of people, which sectors/work areas are these people from ?</p>
+        <p>Answer:<span id="a6">Financial institutions, accounting firms and the government</span></p>
+        <p class="qa">7. How will the general public know about the contributions made into the Fund? </p>
+        <p >Answer:<span id="a7">The team will fully account for every cent contributed and will publish the details on the website</span></p>
+        <p class="qa">8. What has the government done to ensure that there is no need for stockpiling when shopping for  any items in stores? </p>
+        <p >Answer<span id="a8">Government has had discussions with manufacturers and distributors of basic necessities, who have indicated that there will be a continuous supply of these goods</span></p>
+        <p class="qa">9. How is the government going to alleviate congestion at payment points during the times of recieving grant?</p>
+        <p >Answer<span id="a9">Old age pensions and disability grants will be available for collection from 30 and 31 March 2020, while other categories of grants will be available for collection from 01 April 2020</span></p>
+        <p class="qa">10. Which channels for accessing grant will remain open during this national lock-down to help social grant recipient?</p>
+        <p>Answer:<span id="a10">All mentioned </p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"What is the government going to do to ensure that hospitals are not overwhelmed?",
+            ans:["To ensure that hospitals are not overwhelmed, the government is going to work the social sector to train social workers to help in the health care sector","To ensure that hospitals are not overwhelmed, the government is going to build more hospitals","To ensure that hospitals are not overwhelmed, a system will be put in place for ‘centralised patient management’ for severe cases and ‘decentralised primary care’ for mild cases","To ensure that hospitals are not overwhelmed, some people will the sent to private sector hospitals for help"],
+            right:"2"};
+        var que2={que:"How will the government support the  informal settlements and rural communities without reliable water sources? ",
+            ans:["The goverment will work with international partners to get money that can be given to informal settlement households to buy water","People from the formal settlements will be asked to volunteer and collect water for the informal settlers","Provisions of emergency water supplies will be made, such as sending people to deliver 20L of water each day to households without water access","Provisions of emergency water supplies will be made– using water storage tanks, water tankers, boreholes and communal standpipes."],
+            right:"3"};
+        var que3={que:"What fund is set up and focuses on efforts to combat the spread of the virus, helping to track the spread, care for those who are ill and support those whose lives are disrupted?What fund is set up and focuses on efforts to combat the spread of the virus, helping to track the spread, care for those who are ill and support those whose lives are disrupted?",
+            ans:["Solidarity Fund","International Monetary Fund","African Healthcare Fund","Children Fund"],    right:"0"};
+        var que4={que:" Who can contribute to this fund?",
+            ans:["South African businesses, organisations and individuals, and members of the international community","The healthcare workers","The ANC supporters","Only those who own businesses in South Africa"],
+            right:"1"};
+        var que5={que:"Who is the chairperson and the deputy chairperson of the fund?",
+            ans:["Chairperson is Cyril Ramaphosa and deputy chairperson is Tito Mboweni","Chaiperson is the Minister of Finance and deputy chairperson is the Deputy Minister of Finance","Chaiperson is Jacob Zuma and Deputy chairperson is Thabo Mbeki","Chairperson is Ms Gloria Serobe and deputy chairperson is Mr Adrian Enthoven"],
+            right:"3"};
+        var que6={que:"The Fund will be administered by a reputable team of people, which sectors/work areas are these people from ?",
+            ans:["Financial institutions, accounting firms and the government","The South African Revenue Services","The South African Reserve Bank staff","All the National Financial Personnel"],
+            right:"0"};
+        var que7={que:" How will the general public know about the contributions made into the Fund?",
+            ans:["The SABC will broadcast daily the contributed amounts","Newspaper will daily put in the headlines the contributed amounts ","The team will fully account for every cent contributed and will publish the details on the website","The members of the ANC will announce to the public the matters related to the fund."],right:"2"};
+        var que8={que:" What has the government done to ensure that there is no need for stockpiling when shopping for  any items in stores? ",
+            ans:["Government has discussed with the shop owers to increase the stock daily so the demand can be met","Government has enacted a Consumer law that restricts consumers from buying certain amounts of goods at once ","Government has bought a great number of online stores to deliver good to the households so people don't have to go into the shops  ","Government has had discussions with manufacturers and distributors of basic necessities, who have indicated that there will be a continuous supply of these goods "],right:"3"};
+        var que9={que:"How is the government going to alleviate congestion at payment points during the times of recieving grant? ",
+            ans:["Old age pensions and disability grants will be available for collection from 30 and 31 March 2020, while other categories of grants will be available for collection from 01 April 2020"," Old age and disability grants will be delivered to the recipients homes "," Children grants will be collected to schools where the children are attending" ," Every grant recipient will collect money from their nearest ABSA branch "],right:"0"};
+        var que10={que:" Which channels for accessing grant will remain open during this national lock-down to help social grant recipient? ",
+            ans:["ATMs","Retail point of sale devices","Post Offices and cash pay points","All mentioned"],right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>

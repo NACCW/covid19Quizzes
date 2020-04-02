@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week4: Normal</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 4 :  Quiz</h1>
+        <p>Most of the questions will be based on the statements addressed by the President on the escalation of measures to combat COVID-19 epidemic.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1.Besides the group of healthcare workers and other essential public servants, which other group will be exempted from the lockdown ?</p>
+        <p >Answer: All mentioned<span id="a1"></span></p>
+        <p class="qa">2. Under which  3 strictly controlled circumstances will individuals be allowed to leave their homes during the national lock-down?</p>
+        <p >Answer:<span id="a2"> When leaving to seek medical care, buy food, medicine and other supplies or collect a social grant </p>
+        <p class="qa">3. How will the government provide main support for homeless people during this lock-down?</p>
+        <p >Answer:<span id="a3"> Temporary shelters that meet the necessary hygiene standards will be identified for them to use </span></p>
+        <p class="qa">4. Besides the homeless people, who else can use the sites identified for quarantine and self-isolation?</p>
+        <p >Answer:<span id="a4"> Those who cannot self-isolate at home</span></p>
+        <p class="qa">5. Which type of shops and businesses will be NOT be closed during this national lock-down?</p>
+        <p>Answer:<span id="a5"> All mentioned</span></p>
+        <p class="qa">6.  Which companies need to make arrangements for care and maintanance to avoid damage during this national lock-down ?</p>
+        <p>Answer:<span id="a6">Companies whose operations require continuous processes such as furnaces and underground mine operations</span></p>
+        <p class="qa">7. Will provision be made for essential transport services to continue, including transport for essential staff and for patients who need to be managed elsewhere? </p>
+        <p >Answer:<span id="a7">Yes</span></p>
+        <p class="qa">8. Why is the nation-wide lockdown in South Africa necessary ? </p>
+        <p >Answer<span id="a8">To fundamentally disrupt the chain of transmission across society</span></p>
+        <p class="qa">9. Which team is deployed to support the South African Police Service in ensuring that the measures  announced are implemented?</p>
+        <p >Answer<span id="a9"> South African National Defence Force</span></p>
+        <p class="qa">10. Which programme will accompy the nationwide lockdown and what will be it's main tasks?</p>
+        <p>Answer:<span id="a10">The public health management programme which will significantly increase screening, testing, contact tracing and medical management</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"Besides the group of healthcare workers and other essential public servants, which other group will be exempted from the lockdown?",
+            ans:["All mentioned below"," Those involved in the production, distribution and supply of food and basic goods and  essential banking services"," Those involved in the maintenance of power, water ,telecommunications services and laboratory services", "Those involved in the provision of medical and hygiene products"],
+            right:"0"};
+        var que2={que:" Under which  3 strictly controlled circumstances will individuals be allowed to leave their homes during the national lock-down?",
+            ans:["When individuals go to school, go to work or go to church "," When individuals need to to shop to refill their clothes for winter, since its near","When individuals need to go to financial advisors for advices on how to spent their moneys during this Covid19 outbreak ","When leaving to seek medical care, buy food, medicine and other supplies or collect a social grant"],
+            right:"3"};
+        var que3={que:" How will the government provide main support for homeless people during this lock-down?",
+            ans:[" Temporary shelters that meet the necessary hygiene standards will be identified for them to use","Homeless people will join the prisoned people for a place to stay","Homeless people will be asked to stay in churches during the lock-down","The govenrment has not made plans for the homeless people as yet"],    right:"0"};
+        var que4={que:"Besides the homeless people, who else can use the sites identified for quarantine and self-isolation?",
+            ans:["Those who don't feel like self-isolating at home "," Those who cannot self-isolate at home","Those who work for the public services","Those who are not from South Africa"],
+            right:"1"};
+        var que5={que:"Which type of shops and businesses will be NOT be closed during this national lock-down?",
+            ans:["Pharmacies, laboratories and health care providers", "Banks and essential financial and payment services, including the JSE","Supermarkets and petrol stations","All mentioned"],
+            right:"3"};
+        var que6={que:"Which companies need to make arrangements for care and maintanance to avoid damage during this national lock-down?",
+            ans:["Companies whose operations require continuous processes such as furnaces and underground mine operations","Companies with annual revenue of more than R200 million","Companies involved with the transportation of people from one country to another","Companies that are owned by the State"],
+            right:"0"};
+        var que7={que:"Will provision be made for essential transport services to continue, including transport for essential staff and for patients who need to be managed elsewhere? ",
+            ans:["Maybe","No ","Yes","I don't know"],right:"2"};
+        var que8={que:"Why is the nation-wide lockdown in South Africa necessary ?",
+            ans:["The nation-wide lock is not necessary in South Africa"," To let people hide from the virus","To  give people time to think about implications of Covid19 on their lives "," To fundamentally disrupt the chain of transmission across society"],right:"3"};
+        var que9={que:"Which team is deployed to support the South African Police Service in ensuring that the measures  announced are implemented? ",
+            ans:["South African National Defence Force"," South African Football Association team","South African Credit Bureau team" ," There is not other team deployed, it's only the South African Police Services"],right:"0"};
+        var que10={que:" Which programme will accompy the nationwide lockdown and what will be it's main tasks? ",
+            ans:["There is no programme that will accompy the nationwide lockdown","The public health management programme which will educate the disadvataged members of the society about the coming virus called coronavirus","The national wellness programme which will significantly increase screening, testing, contact tracing and medical management","The public health management programme which will significantly increase screening, testing, contact tracing and medical management"],right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
