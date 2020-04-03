@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 5:Challenging </title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week  5:  Quiz </h1>
+        <p>All of the questions will be based on the Statement of the Minister of Health on the launch of Mobile Laboratories </p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. As of this week, how many cases are not allocated provinces in this week?</p>
+        <p >Answer:<span id="a1"> 90</span></p>
+        <p class="qa">2. What other 3  important factors contribute to having too few test cases both in the Public and Private Laboratories and also considering the size of our population?</p>
+        <p >Answer:<span id="a2">Inequality, Poverty and Underlying disease burden  </p>
+        <p class="qa">3.The President has approved a “COVID Home Visits Program”, what is this program about? </p>
+        <p >Answer:<span id="a3"> The program is about the deployment of Community Health Care Workers to the field for a mass of door-to-door households and community-based screening, referral for clinic testing, quarantine of suspected cases and appropriate care for COVID-19 patients.</span></p>
+        <p class="qa">4. Who has PEPFAR  funded  inorder to support provinces in this Program that have been availed?</p>
+        <p >Answer:<span id="a4">The District Support Partners</span></p>
+        <p class="qa">5. Which 2 organizations have assisted the Department of Health in mapping the most vulnerable populations- through this  process 993 strategic priority wards were identified using the social vulnerability index?</p>
+        <p>Answer:<span id="a5"> The CSIR and Right to Care</span></p>
+        <p class="qa">6. What is the total number of mobile testing units have been procured and deployed so far, inorder to ensure that there is adequate capacity to test citizens being screened?</p>
+        <p>Answer:<span id="a6">67 </span></p>
+        <p class="qa">7. At this stage, the focus will be on collecting what and for what type of test?</p>
+        <p >Answer:<span id="a7">Collecting nasopharyngeal specimens for PCR tests or GeneXpert testing</span></p>
+        <p class="qa">8. What is the current capacity in the number of tests within 24 hours in 10 laboratories countrywide ?</p>
+        <p >Answer<span id="a8">The current capacity is 5000 tests in 24 hours in 10 laboratories countrywide</span></p>
+        <p class="qa">9. Why at the moment, South Africa  has not yet started with using Rapid antibody tests have been used in many countries throughout the world? </p>
+        <p >Answer<span id="a9"> This is because authorities are currently working round the clock to assess the efficacy of these tests in our context with the aim to make them available for future application.</span></p>
+        <p class="qa">10. Why does the health ministry say "what we may currently be experiencing is the calm before a heavy and devastating storm " with reagrds to what is going to happen next month?</p>
+        <p>Answer:<span id="a10">Next month the flu season starts, thus making more people sick with similarsymptoms, and therefore no way of distinguishing common colds from an upsurge of COVID-19 infection. These will flood our clinics and hospitals and create fertile ground for Coronavirus to spread or be masked in its presentation.</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"As of this week, how many Covid19 positive cases are not allocated provinces?",
+            ans:["100","100","90","9"],
+            right:"2"};
+        var que2={que:" What other 3  important factors contribute to having too few test cases both in the Public and Private Laboratories and also considering the size of our population?",
+            ans:["Sexism, Classism and Racism ","Ageism, Sexism and Lack of Poverty ","Equality, Racism and Underlying disease burden ","Inequality, Poverty and Underlying disease burden "],
+            right:"3"};
+        var que3={que:"The President has approved a “COVID Home Visits Program”, what is this program about?",
+            ans:["The program is about the deployment of Community Health Care Workers to the field for a mass of door-to-door households and community-based screening, referral for clinic testing, quarantine of suspected cases and appropriate care for COVID-19 patients.","The program is about the deployment of Social Workers to deliver food to appropriate care for COVID-19 patients.","The program is about the deployment of Community Financial Workers to the field for door-to-door households registration of Covid19 support grant for COVID-19 patients.","The program is about the deployment of Local Security Workers to the field for a mass of door-to-door households , community-based screening and referral for clinic testing."],    right:"0"};
+        var que4={que:" Who has PEPFAR  funded  inorder to support provinces in this Program that have been availed?",
+            ans:["The Provincial Partners","The District Support Partners","The local Health Municipalies","The Regional Tradional Society "],
+            right:"1"};
+        var que5={que:"Which 2 organizations have assisted the Department of Health in mapping the most vulnerable populations- through this  process 993 strategic priority wards were identified using the social vulnerability index?",
+            ans:["UNICEF and SABC","BP and Telkom","Sasol and Eskom","The CSIR and Right to Care"],
+            right:"3"};
+        var que6={que:" What is the total number of mobile testing units have been procured and deployed so far, inorder to ensure that there is adequate capacity to test citizens being screened?",
+            ans:["67","76","760","600"],
+            right:"0"};
+        var que7={que:" At this stage, the focus will be on collecting what and for what type of test? ",
+            ans:["Collecting nasopharyngeal specimens for RRCR testing","Collecting gastropharyngeal specimens for PCR tests or GeneXpert testing","Collecting DNA segments for PCR tests or GeneXpert testing","Collecting nasopharyngeal specimens for PCR tests or GeneXpert testing"],right:"3"};
+        var que8={que:"What is the current capacity in the number of tests within 24 hours in 10 laboratories countrywide ?",
+            ans:["The current capacity is 500 tests in 24 hours in 100 laboratories countrywide","The current capacity is 5000 tests in 24 hours in 100 laboratories countrywide","The current capacity is 50000 tests in 24 hours in 10 laboratories countrywide","The current capacity is 5000 tests in 24 hours in 10 laboratories countrywide"],right:"3"};
+        var que9={que:" Why at the moment, South Africa  has not yet started with using Rapid antibody tests have been used in many countries throughout the world?",
+            ans:["This is because authorities are currently working round the clock to assess the efficacy of these tests in our context with the aim to make them available for future application","This is because authorities are currently experiementing testing using this Rapid test on animals to see if it can work for us","This is because authorities are currently working round the clock to assess the safety  of these tests in  the context of South African people" ,"This is because authorities are currently collecting funds ad preparing to assess the usefullness of these tests in the Rainbow nation context with the aim to make them available if all goes well."],right:"0"};
+        var que10={que:"Why does the health ministry say 'what we may currently be experiencing is the calm before a heavy and devastating storm ' with reagrds to what is going to happen next month? ",
+            ans:["Next month it's predicted that most people will suffer from stomache, thus making more people sick with similar symptoms to Covid19 and therefore no way of distinguishing common colds from an upsurge of COVID-19 infection. These will flood our clinics and hospitals and create fertile ground for Coronavirus to spread.","Next month many people are predicted to give birth, thus making more people visiting hospitals and increase the potential spread of COVID-19 infection.","Next month the flu season starts, thus making more people want to test if they have a flue virus  and therefore there won't be any way of distinguishing common flue cases from an upsurge of COVID-19 cases.","Next month the flu season starts, thus making more people sick with similarsymptoms, and therefore no way of distinguishing common colds from an upsurge of COVID-19 infection. These will flood our clinics and hospitals and create fertile ground for Coronavirus to spread or be masked in its presentation."],right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
