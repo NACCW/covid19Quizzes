@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 6: Easy </title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 6 :  Quiz</h1>
+        <p>All of the questions will be based on the  business response to COVID-19 documented on the press release about Economic mitigation and relief measures.  </p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. According to the press release, what entity has reduced interest rates by 100 basis points, making it easier for consumers and firms to access credit?</p>
+        <p >Answer:<span id="a1">The Reserve Bank </span></p>
+        <p class="qa">2. Has a range of measures been taken by the government to support market liquidity and protect the banking system?  </p>
+        <p >Answer:<span id="a2"> Yes </p>
+        <p class="qa">3. What incentive has been expanded to include all employees earning below R6, 500 with a subsidy of R500, relieving the burden on businesses as they face a decline in revenue due to the lockdown? </p>
+        <p >Answer:<span id="a3"> Employment Tax Incentive</span></p>
+        <p class="qa">4. What trust has been established to provide a further R1 Billion in zero-interest loan funding to SMEs in distress?</p>
+        <p >Answer:<span id="a4">  The South Africa Future Trust</span></p>
+        <p class="qa">5. Which department is working with community-based organisations and the Solidarity Fund, in scaling up its food distribution programme for households in need? </p>
+        <p>Answer:<span id="a5"> Department of Social Development </span></p>
+        <p class="qa">6. Which insurance fund has created a special COVID-19 Temporary Employer/Employee Relief Scheme with over R30 billion to provide income support to workers where employers are unable to pay their full salaries due to the lockdown? </p>
+        <p>Answer:<span id="a6"> Unemployment Insurance Fund</span></p>
+        <p class="qa">7. Has all major banks announced options for payment holidays and debt restructuring for SMEs and reliable individuals who cannot meet their obligations?</p>
+        <p >Answer:<span id="a7">Yes </span></p>
+        <p class="qa">8.Everyone is encouraged to keep active during lockdown.  Being active will boost your immune systems and give your body strength to fight diseases.  This can be done by: </p>
+        <p >Answer<span id="a8">Regular exercises are critical at this time.</span></p>
+        <p class="qa">9. Public transport are allowed to operate provided they </p>
+        <p >Answer<span id="a9"> All of the above</span></p>
+        <p class="qa">10. During lockdown, serious crimes are reported to have decreased.  The reason for the decrease is:</p>
+        <p>Answer:<span id="a10">Reduction in the use of alcohol resulted in few crimes committed</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"According to the press release, what entity has reduced interest rates by 100 basis points, making it easier for consumers and firms to access credit?",
+            ans:["The South African Revenue Services","Standard bank","The Reserve Bank","South African Credit Bureau"],
+            right:"2"};
+        var que2={que:"Has a range of measures been taken by the government to support market liquidity and protect the banking system? ",
+            ans:["No","Maybe","I don't know","Yes"],
+            right:"3"};
+        var que3={que:" What incentive has been expanded to include all employees earning below R6, 500 with a subsidy of R500, relieving the burden on businesses as they face a decline in revenue due to the lockdown?",
+            ans:["Employment Tax Incentive","Informal employment tax incentive","Businesses Tax Incentive","Unemployment Incentive"],    right:"0"};
+        var que4={que:" What trust has been established to provide a further R1 Billion in zero-interest loan funding to SMEs in distress?",
+            ans:["Mandela Children’s Trust Fund","The South Africa Future Trust","SMEs Trust Fund","Higher Education Trust Fund"],
+            right:"1"};
+        var que5={que:"Which department is working with community-based organisations and the Solidarity Fund, in scaling up its food distribution programme for households in need?",
+            ans:["Department of Finance","Department of Basic Education","Department of Labour","Department of Social Development"],
+            right:"3"};
+        var que6={que:" Which insurance fund has created a special COVID-19 Temporary Employer/Employee Relief Scheme with over R30 billion to provide income support to workers where employers are unable to pay their full salaries due to the lockdown?",
+            ans:[" Unemployment Insurance Fund","National Youth Insurance Fund","Young Professionals Insurance Fund","Employment Insurance Fund"],
+            right:"0"};
+        var que7={que:"Has all major banks announced options for payment holidays and debt restructuring for SMEs and individuals who cannot meet their obligations? ",
+            ans:["Maybe","I don't know","Yes","No"],right:"2"};
+        var que8={que:"Everyone is encouraged to keep active during lockdown.  Being active will boost your immune systems and give your body strength to fight diseases.  This can be done by:",
+            ans:["Regular exercises are critical at this time.","You have never had so much time to remain sleeping, enjoy your sleep as much as you like.","Eating anything coming my way will ensure that I am always full.","All of the above"],right:"0"};
+        var que9={que:" Public transport are allowed to operate provided they:",
+            ans:["Ensure that commuters sanitize their hands before getting into the taxi.","All commuters are wearing masks","A maximus of 10 passengers in the 14 seater" ,"All of the above"],right:"3"};
+        var que10={que:" During lockdown, serious crimes are reported to have decreased.  The reason for the decrease is:",
+            ans:["People are so happy spending time with their families that they do not see a reason to commit crime","There are few cars on the roads and the criminals are discouraged to commit crime.","Reduction in the use of alcohol resulted in few crimes committed","Criminals have come to their right senses, South Africa is now a crime free country"],right:"2"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
