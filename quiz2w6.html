@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week : 6</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week  6 :  Quiz 2</h1>
+        <p>All of the questions will be based on Lockdown fitness tutorials (from the 02nd of April until 09th of April ) shown in the SA Corona Virus Online Portal </p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. How many tutorial techniques are shown by the 9th of April?</p>
+        <p >Answer:<span id="a1">8 </span></p>
+        <p class="qa">2. Are these exercises only for females?  </p>
+        <p >Answer:<span id="a2"> No </p>
+        <p class="qa">3. What is the aim of these exercise tutorials?</p>
+        <p >Answer:<span id="a3"> To teach us how to stay active at home during the lockdown</span></p>
+        <p class="qa">4. Who is giving the instructions to these exercises and from which fitness company does he come from?</p>
+        <p >Answer:<span id="a4"> Coach Fu from FT fitness </span></p>
+        <p class="qa">5. According to Coach Fu, do you have to squeeze your legs together when you do push ups and why?</p>
+        <p>Answer:<span id="a5"> Yes, so you can keep your entire body tight</span></p>
+        <p class="qa">6. Which exercise starts off by keeping feet and  shoulders off the floor?</p>
+        <p>Answer:<span id="a6">  V-ups</span></p>
+        <p class="qa">7. Which 2 exercises have almost  a similar starting position? </p>
+        <p >Answer:<span id="a7"> Push ups and mountain climber</span></p>
+        <p class="qa">8. Which exercise needs you to have a chair or something to balance on?</p>
+        <p >Answer<span id="a8">Dip</span></p>
+        <p class="qa">9. Which exercise will work the entire body and the lungs and it starts by lying down flat? </p>
+        <p >Answer<span id="a9">Burpee</span></p>
+        <p class="qa">10. Are all of these exercises only for those who have tested positive to the coronavirus?
+        </p>
+        <p>Answer:<span id="a10">No</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"How many tutorial techniques are shown by the 9th of April?",
+            ans:["7","8 ","9","10"],
+            right:"1"};
+        var que2={que:"Are these exercises only for females? ",
+            ans:["They are for young females","Yes","No","I don't know"],
+            right:"2"};
+        var que3={que:"What is the  aim of these exercise tutorials",
+            ans:[" To teach us how to stay active at home during the lockdown","To help only some people in losing weight  ","To show us how to exercise in order to not get coronavirus","To show us how those with coronavirus should exercise daily"],    right:"0"};
+        var que4={que:"  Who is giving the instructions to these exercises and from which fitness company does he come from?",
+            ans:["Coach Zoo from FT fitness","Coach Fu from Zone fitness","Coach Fu from Planet fitness"," Coach Fu from FT fitness "],
+            right:"3"};
+        var que5={que:" According to Coach Fu, do you have to squeeze your legs together when you do push ups and why?",
+            ans:["No, you only squeeze your legs when you do sit ups","Yes, so you can keep your entire body tight","No, you only when you do suarts","No, you should spread your legs for balance"],
+            right:"1"};
+        var que6={que:"Which exercise starts off by keeping feet and  shoulders off the floor?",
+            ans:["V-ups","Mountain climbers","Squats","Dip"],
+            right:"0"};
+        var que7={que:" Which 2 exercises have almost  a similar starting position? ",
+            ans:["Squats and Mountain Climber","Mountain Climber and V-ups","Push ups and mountain climber","Squats and V-ups"],right:"2"};
+        var que8={que:"Which exercise needs you to have a chair or something to balance on?",
+            ans:["Burpee","Squats","Push ups","Dip"],right:"3"};
+        var que9={que:" Which exercise will work the entire body and the lungs and it starts by lying down flat? ",
+            ans:["Dip","Burpee","Squats" ,"V-ups "],right:"1"};
+        var que10={que:" Are all of these exercises only for those who have tested positive to the coronavirus? ",
+            ans:["Yes","Only females that have tested positive to coronavirus","No","Only males that have tested positive to coronavirus"],right:"2"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
