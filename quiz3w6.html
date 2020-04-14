@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week : 7 </title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week  7 :  Quiz 3</h1>
+        <p>All of the questions will be based on the message announced by the President  on the 09th of April</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. How many weeks of lockdown has it been on the day (09 April 2020) when the president delivered the message?</p>
+        <p >Answer:<span id="a1"> 2 Weeks </span></p>
+        <p class="qa">2. What 3 main national Covid-19 interventions have caused our economy to ground to a halt? </p>
+        <p >Answer:<span id="a2">  Closing of borders to the world, children not being in schools and businesses closed their operations  </p>
+        <p class="qa">3. According to the president,have  South Africans respected the lockdown and largely observed the regulations? </p>
+        <p >Answer:<span id="a3"> Yes</span></p>
+        <p class="qa">4. What is the president’s wish to South Africans for our cooperation, for our commitment and above all for our patience?</p>
+        <p >Answer:<span id="a4">A wish to thank us all, personally</span></p>
+        <p class="qa">5. The president’s wish is to thank us (South African) for what exactly ?</p>
+        <p>Answer:<span id="a5"> For reaffirming to each other and to the world that we South Africans are a people who come together and unite at moments of great crisis </span></p>
+        <p class="qa">6. Earlier today (09 April 2020), who did he have  a productive meeting about the work they are doing in provinces and districts to stop the spread of the virus?</p>
+        <p>Answer:<span id="a6"> With our Premiers  </span></p>
+        <p class="qa">7. Who else did he have a  discussion with ,who collectively pledged their support for the efforts that are being made to combat the pandemic? </p>
+        <p >Answer:<span id="a7"> The leaders of all our political parties represented in Parliament</span></p>
+        <p class="qa">8. What evidence  is sufficient to show that the lockdown is working in South Africa? </p>
+        <p >Answer<span id="a8"> All mentioned</span></p>
+        <p class="qa">9.  What is the president’s ask  to all of us (South African) that has to do with making even greater sacrifices so that our country may survive this crisis and so that tens of thousands of lives may be saved? </p>
+        <p >Answer<span id="a9"> To endure the extension of nation-wide lockdown by a further two weeks beyond the initial 21 days</span></p>
+        <p class="qa">10. Which Council has decided to extend the nation-wide lockdown by a further two weeks beyond the initial 21 days? </p>
+        <p>Answer:<span id="a10">National Coronavirus Command Council</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:" How many weeks of lockdown has it been on the day (09 April 2020) when the president delivered the message?",
+            ans:["1 week","3 weeks","2 weeks","4 weeks"],
+            right:"2"};
+        var que2={que:"What 3 main national Covid-19 interventions have caused our economy to ground to a halt?",
+            ans:["Opening our borders to the world, our children are not in school, businesses have closed their operations,","Closed our borders to the world, all children being in schools, businesses have closed their operations,"," Closed our borders to the world, our children are not in school, all businesses operating at all times"," Closing of borders to the world, children not being in schools and businesses closed their operations"],
+            right:"3"};
+        var que3={que:" According to the president,have  South Africans respected the lockdown and largely observed the regulations?",
+            ans:[" Yes","No","Only a small portion","He did not say"],    right:"0"};
+        var que4={que:" What is the president’s wish to South Africans for our cooperation, for our commitment and above all for our patience?",
+            ans:["A wish to visit all of us to our homes","A wish to thank us all, personally","A wish that the lockdown can end soon","A wish that we can all not get infected with Coronavirus"],
+            right:"1"};
+        var que5={que:"The president’s wish is to thank us (South African) for what exactly ?",
+            ans:["For not  spreading fake news","For not bulk buying","For not violating the nation-wide lockdown rules"," For reaffirming to each other and to the world that we South Africans are a people who come together and unite at moments of great crisis"],
+            right:"3"};
+        var que6={que:"Earlier today (09 April 2020), who did he have  a productive meeting about the work they are doing in provinces and districts to stop the spread of the virus?",
+            ans:["With our Premiers  ","With all healthcare workers","With all the celebrities in SA"," With the researchers from NICD"],
+            right:"0"};
+        var que7={que:" Who else did he have a  discussion with ,who collectively pledged their support for the efforts that are being made to combat the pandemic? ",
+            ans:["The  traditional leaders of all our traditional unions","The  business leaders of all businesses in South Africa","The leaders of all our political parties represented in Parliament","The religious leaders of all our religions "],right:"2"};
+        var que8={que:"What evidence  is sufficient to show that the lockdown is working in South Africa? ",
+            ans:["From 1,170 confirmed cases on the 27th of March, the number of confirmed cases today stands at 1,934.","In the two weeks before the lockdown, the average daily increase in new cases was around 42%.","Since the start of the lockdown, the average daily increase has been around 4%."," All mentioned"],right:"3"};
+        var que9={que:"  What is the president’s ask  to all of us (South African) that has to do with making even greater sacrifices so that our country may survive this crisis and so that tens of thousands of lives may be saved?",
+            ans:["To endure the extension of nation-wide lockdown by a further two weeks beyond the initial 21 days","To all make donations to the solidarity funds","To all respect the healthcare workers" ,"To stop burning schools "],right:"0"};
+        var que10={que:" Which Council has decided to extend the nation-wide lockdown by a further two weeks beyond the initial 21 days?  ",
+            ans:["Higher Education Funding Council","Provincial Research Council","National Coronavirus Command Council","The National Financial Council"],right:"2"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>
