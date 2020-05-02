@@ -13,7 +13,7 @@
 <body>
     <div class="front">
         <h1>Week 7 : Easy Quiz</h1>
-        <p>All of the questions will be based onthe address : Health minister’s technical public engagement with experts dealing with COVID-19 in SA </p>
+        <p>All of the questions will be based on the address : Health minister’s technical public engagement with experts dealing with COVID-19 in SA </p>
         <img src="image.png" class="responsive">
         <button type="button" id="start">Start</button>    
     </div>
@@ -49,15 +49,18 @@
         </span></p>
         <p class="qa">6. Is Coronavirus scientifically called SARS coronavirus (SARS-CoV-2)?</p>
         <p>Answer:<span id="a6"> Yes</span></p>
-        <p class="qa">7.Why did South Africa not have the experience of SARS first's epidemic outbreak that was in China?</p>
-        <p >Answer:<span id="a7"></span></p>
-        <p class="qa">8.According to Prof, Is it true that Coronavirus is sometimes called a sister to SARS?  </p>
-        <p >Answer<span id="a8"></span></p>
+        <p class="qa">7.Why does South Africa NOT have the experience of SARS first's epidemic outbreak that was in China?</p>
+        <p >Answer:<span id="a7">This is because China was able to contain the virus.so it does not spread to other countries.
+        </span></p>
+        <p class="qa">8.According to Prof, is it true that Coronavirus is sometimes called a sister to SARS?  </p>
+        <p >Answer<span id="a8">Yes</span></p>
         <p class="qa">9.What advantage does the ministerial advisory committee have with response to this virus? </p>
-        <p >Answer<span id="a9"></span></p>
-        <p class="qa">10.At the time of this address, what is the team's challenge? </p>
-        <p>Answer:<span id="a10"></p>
+        <p >Answer<span id="a9">The committee has a history of studying viruses. The team of people serving on the committee have years of experience with studying viruses such as the HIV, contact traces for TB  and others.
+        </span></p>
+        <p class="qa">10.At the time of this address, what is Professor Salim  Abdool Karim's team challenge? </p>
+        <p>Answer:<span id="a10">Their main challenge is to make the best available advise on the limited evidence available</p>
             <br>
+
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
     </div>
     
@@ -70,7 +73,7 @@
         var i=0;
         var score=0;
         var que1={que:"Who is Professor Salim  Abdool Karim?",
-            ans:["He is a leading Engineer and is the head of a 45 members ministerial advisory committee that only  President Cyril Ramaphosa  about the best national health response to covid19.","He is the chairman of the National Health Council and sometimes advises the government about the social response to Covid19","He is an Epidemiologist and an infectious disease specialist. He is the head of a 45 members ministerial advisory committee that advises Dr Zweli Mkhize, President Cyril Ramaphosa and the rest of the government about the national health response to covid19.","He is a member of the Higher Education Committee that is currently planning the best strategies for the Higher Education to respond to Covid 19"],
+            ans:["He is a leading Engineer and is the head of a 45 members ministerial advisory committee that advises only president Cyril Ramaphosa  about the best national health response to covid19.","He is the chairman of the National Health Council and sometimes advises the government about the social response to Covid19","He is an Epidemiologist and an infectious disease specialist. He is the head of a 45 members ministerial advisory committee that advises Dr Zweli Mkhize, President Cyril Ramaphosa and the rest of the government about the national health response to covid19.","He is a member of the Higher Education Committee that is currently planning the best strategies for the Higher Education to respond to Covid 19"],
             right:"2"};
         var que2={que:"Who is Dr Zweli Mkhize?",
             ans:["He is a leaading Epidemiologist working on finding the Covid19 vaccination","He is the chairperson of the Taxi Association","Deputy minister of Health","Minister of Health in South Africa"],
@@ -86,14 +89,14 @@
         var que6={que:"Is Coronavirus scientifically called SARS coronavirus (SARS-CoV-2)?",
             ans:["Yes","No","I don't think so","I think and believe so"],
             right:"0"};
-        var que7={que:" Why did South Africa not have the experience of SARS first's epidemic outbreak that was in China?",
-            ans:["","","China was able to contain the virus,so it does not spread to other countries.",""],right:"2"};
-        var que8={que:"",
-            ans:["","","",""],right:"3"};
-        var que9={que:" ",
-            ans:["","","" ," "],right:"0"};
-        var que10={que:" ",
-            ans:["","","",""],right:"3"};
+        var que7={que:"Why did South Africa not have the experience of SARS first's epidemic outbreak that was in China?",
+            ans:["People of South Africa were all immune to the first SARS virus outbreak","South African's already had the vaccine and therefore they didn't experience SARS outbrea","China was able to contain the virus,so it does not spread to other countries.","China was able to spread the virus to all other countries except South Africa"],right:"2"};
+        var que8={que:"According to Prof, is it true that Coronavirus is sometimes called a sister to SARS?",
+            ans:["I don't think so","I don't know","No","Yes"],right:"3"};
+        var que9={que:"What advantage does the ministerial advisory committee have with response to this virus? ",
+            ans:["The committee has a history of studying viruses. The team of people serving on the committee have years of experience with studying viruses such as the HIV, contact traces for TB  and others","The committee has an advantage of developing vaccines for SARS related virus","They have more than enough funds to try different experiements. That is their advantage" ," Their advantage is that they all university Professors - to they apply what they teach to students."],right:"0"};
+        var que10={que:"At the time of this address, what is Professor Salim  Abdool Karim's team challenge?",
+            ans:["Their challenge was understanding the implications of Covid19 on small businesses in South Africa","Their challenge was getting hold of the members of the government","Their challenge was having enough funds to pay every member involved in the committeee","Their main challenge is to make the best available advise on the limited evidence available"],right:"3"};
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
         $("#start").click(function(){
