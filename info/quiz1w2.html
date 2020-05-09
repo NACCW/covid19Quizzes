@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 2:Easy</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 2 : Easy Quiz</h1>
+        <p>Most of the questions will be based on the brief from the Alliance for Child Protection in Humanitarian Action and the Ministerial briefings on the impacts of Covid19 in Education</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+       <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. What type of work is done by Alliance for Child Protection in Humanitarian Action?</p>
+        <p >Answer:<span id="a1"> As a  global interagency group focused on child protection in humanitarian settings. Their work includes setting standards and providing technical support to ensure theat efforts to protection children from violence and exploitation are effective and of high quality .</span></p>
+        <p class="qa">2. According to brief from the Alliance  for Child Protection in Humanitarian actions, what 3 recommended covid19 measures can all negatively impact children and their families?</p>
+        <p >Answer:<span id="a2"> Home-based, facility-based and zonal-based quarantine and
+            isolation </p>
+        <p class="qa">3. What is the aim of the Alliance  for Child Protection in Humanitarian actions brief? </p>
+        <p >Answer:<span id="a3"> To support child protection practitioners to better respond to the child protection risks
+            during a COVID-19 pandemic.</span></p>
+        <p class="qa">4. According to the brief, what are the 2 main quarantine measures imposed on children globally? </p>
+        <p >Answer:<span id="a4"> School closures and restrictions on movements</span></p>
+        <p class="qa">5. On which date did the Basic Education department determined that schools should resume?</p>
+        <p>Answer:<span id="a5">14 April 2020 </span></p>
+        <p class="qa">6. Should there be changes to this date, who will the department communicate with? </p>
+        <p>Answer:<span id="a6">Parents of the learners</span></p>
+        <p class="qa">7. Who is the minister of Basic Education? </p>
+        <p >Answer:<span id="a7">Ms Angelina Angie Matsie Motshekga</span></p>
+        <p class="qa">8. The department of Basic Education's directive on Covid19 only affects public schools and not private schools?</p>
+        <p >Answer<span id="a8">Not True, it affects both public and private schools.</span></p>
+        <p class="qa">9.Post Schooling Education and Training System (PSET) is reported to consist of how many student and staff? </p>
+        <p >Answer<span id="a9"> +- 2.5 Million</span></p>
+        <p class="qa">10. Who is the minister of Higher Education in South Africa?</p>
+        <p>Answer:<span id="a10">Dr Blade Nzimande</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"What type of work is done by Alliance for Child Protection in Humanitarian Action?",
+            ans:["The group works on the type of work concerned with Aliens and other foreign species that children and humans love to watch","On the type of work that is about protecting children and all humans from Alien attacks","As a global interagency group focused on child protection in humanitarian settings. Their work includes setting standards and providing technical support to ensure theat efforts to protection children from violence and exploitation are effective and of high quality ","The Allience works on the matters of the Democratic Allience."],
+            right:"2"};
+        var que2={que:" According to the brief from the Alliance for Child Protection in Humanitarian actions, what 3 recommended covid19 measures can all negatively impact children and their families?",
+            ans:["No measures can negatively affect children and their families","Home-based, facility-based and zonal-based quarantine","Safe Park visits, Home Schools and Church visits","Home-based, facility-based &zonal-based quarantine and isolation"],
+            right:"3"};
+        var que3={que:"What is the aim of the Alliance  for Child Protection in Humanitarian actions brief?  ",
+            ans:["To support child protection practitioners to better respond to the child protection risks during a COVID-19 pandemic."," To  Protect practitioners to better respond to the  COVID-19 pandemic.","To help improve children's rights","To support their Workers Only in response to the COVID-19 pandemic."],    right:"0"};
+        var que4={que:"According to the brief, what are the 2 main quarantine measures imposed on children globally?",
+            ans:["Completely self isolation only","School closures and restrictions on movements","No measures were imposed on children","Measures were only imposed on the children of South Africa,not globally"],
+            right:"1"};
+        var que5={que:"On which date did the Basic Education department determined that schools should resume?",
+            ans:["10 Jan 2021","04 May 2020","13 April 2020 ","14 April 2020"],
+            right:"3"};
+        var que6={que:"Should there be changes to this date, who will the department communicate with?",
+            ans:["Parents of the learners","Only the teachers","Only the learners","The President"],
+            right:"0"};
+        var que7={que:"Who is the minister of Basic Education?",
+            ans:["Mr Cyril Ramaphosa","Mr Julius Malema","Ms Angie Motshekga","Dr Blade Nzimande"],right:"2"};
+        var que8={que:"The department of Basic Education's directive on Covid19 only affects public schools and not private schools",
+            ans:["It affects only  the home schooled","I do not know","True, only public Schools","Not True, it affects both public and private schools."],right:"3"};
+        var que9={que:"Post Schooling Education and Training System (PSET) is reported to consist of how many student and staff?",
+            ans:["+- 2.5 Million","About 58 million","-+10 million","About 1 000 000"],right:"0"};
+        var que10={que:"Who is the minister of Higher Education in South Africa?",
+            ans:["Dr Blade Nzimande","Mr Cyril Ramaphosa","Mr Julius Malema","Ms Angie Motshekga"],right:"0"};
+
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+  
+</body>
+
+
+</html>

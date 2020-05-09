@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week3:Normal</title>
+    <title>Week : </title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class="front">
-        <h1>Week 3 : Normal Quiz</h1>
+        <h1>Week  :  Quiz</h1>
+        <p>Most of the questions will be based on </p>
         <img src="image.png" class="responsive">
         <button type="button" id="start">Start</button>    
     </div>
@@ -34,25 +35,25 @@
         <button type="button" id="an">Click here to see answers</button>
     </div>
     <div class="answers">
-        <p class="qa">1.</p>
-        <p >Answer:<span id="a1"> </span></p>
-        <p class="qa">2.</p>
-        <p >Answer:<span id="a2"> </p>
+        <p class="qa">1. ?</p>
+        <p >Answer:<span id="a1">. </span></p>
+        <p class="qa">2.  </p>
+        <p >Answer:<span id="a2">  </p>
         <p class="qa">3. </p>
         <p >Answer:<span id="a3"> </span></p>
         <p class="qa">4.</p>
-        <p >Answer:<span id="a4"> </span></p>
+        <p >Answer:<span id="a4"></span></p>
         <p class="qa">5. </p>
         <p>Answer:<span id="a5"> </span></p>
-        <p class="qa">6.  </p>
-        <p>Answer:<span id="a6"></span></p>
+        <p class="qa">6. </p>
+        <p>Answer:<span id="a6"> </span></p>
         <p class="qa">7. </p>
         <p >Answer:<span id="a7"></span></p>
-        <p class="qa">8. </p>
+        <p class="qa">8.  </p>
         <p >Answer<span id="a8"></span></p>
-        <p class="qa">9.</p>
+        <p class="qa">9. </p>
         <p >Answer<span id="a9"></span></p>
-        <p class="qa">10.</p>
+        <p class="qa">10. </p>
         <p>Answer:<span id="a10"></p>
             <br>
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
@@ -67,12 +68,12 @@
         var i=0;
         var score=0;
         var que1={que:"",
-            ans:["","",""],
+            ans:["","","",""],
             right:"2"};
         var que2={que:"",
             ans:["","","",""],
             right:"3"};
-        var que3={que:" ",
+        var que3={que:"",
             ans:["","","",""],    right:"0"};
         var que4={que:"",
             ans:["","","",""],
@@ -83,15 +84,14 @@
         var que6={que:"",
             ans:["","","",""],
             right:"0"};
-        var que7={que:"",
+        var que7={que:" ",
             ans:["","","",""],right:"2"};
         var que8={que:"",
             ans:["","","",""],right:"3"};
-        var que9={que:"",
-            ans:["","","",""],right:"0"};
-        var que10={que:"",
-            ans:["","","",""],right:"0"};
-
+        var que9={que:" ",
+            ans:["","","" ," "],right:"0"};
+        var que10={que:" ",
+            ans:["","","",""],right:"3"};
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
         $("#start").click(function(){
@@ -150,10 +150,10 @@
                 $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
             }
             else if(score<8){
-                $(".message").text("Good, you know quite a bit. But don't stop keeping yourself informed.");
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
             }
             else{
-                $(".message").text("Amazing! you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
             }
         }
         $("#an").click(function(){
@@ -195,6 +195,9 @@
     });
     
     </script>
+   
+
 </body>
+
 
 </html>

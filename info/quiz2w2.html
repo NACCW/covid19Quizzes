@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week2:Normal</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 2 : Normal Quiz</h1>
+        <p>Most of the questions will be based on brief from the Alliance for Child Protection in Humanitarian Action, Basic Education and Higher Education in South Africa.</p>
+        <img src="image.png" class="responsive">
+
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1.According to the brief from the Alliance  for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the society ?</p>
+        <p >Answer:<span id="a1"> Erosion of social capital, disruption or limited access to basic services </span></p>
+        <p class="qa">2.According to the brief from the Allience for Child protection in Humanitarian actions, what is the main Socio-ecological impact of COVID19 on the sociocultural norms? </p>
+        <p >Answer:<span id="a2"> Stigma against certain ethnic groups</p>
+        <p class="qa">3. According to the brief from the Alliance  for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the community?</p>
+        <p >Answer:<span id="a3">Break down of trust, competition of scarce resources,limited access to community support services , education and play spaces. </span></p>
+        <p class="qa">4.According to the brief from the Alliance  for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the family?</p>
+        <p >Answer:<span id="a4"> Family separation reduced access to social supports, caregiver distress and heightened risk of violence & domestic abuse.</span></p>
+        <p class="qa">5. How many school days reported by the Basic Education minister are to be lost because of Covid19 interventions?</p>
+        <p>Answer:<span id="a5"> 10 school days</span></p>
+        <p class="qa">6.  How is the department of Education planning to compensate for the lost days? </p>
+        <p>Answer:<span id="a6"> To compensate for lost days the June holidays will be cut short by a week. Once opened schools will be encouraged to extend tuition hours.</span></p>
+        <p class="qa">7. What 3 main school activities are not cancelled or postponed as the result of Covid19 interventions?</p>
+        <p >Answer:<span id="a7">South African School Choral Eisteddfod (SASCE), all school sports programmes and of course assemblies</span></p>
+        <p class="qa">8. The Department of Higher Education and Training has established a COVID-19 Team comprising of which 4 other groups?</p>
+        <p >Answer<span id="a8">Universities South Africa (USAF), the South African College Principals Organisation (SACPO), Department of  Health,  and Higher Health</span></p>
+        <p class="qa">9. The Department of Science and Innovation has  established a research team made up of which other 3 groups?</p>
+        <p >Answer<span id="a9">Medical Reseach Council (MRC), Council for Scientific and Industrial Research (CSIR), Human Sciences Research Council (HSRC)</span></p>
+        <p class="qa">10. What is the role of recently established team by the Department of Higher Education and Training?</p>
+        <p>Answer:<span id="a10">To coordinate a sector response and collate institutional case management reports</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"According to the brief from the Alliance  for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the society ?",
+            ans:["Break down of trust, competition of scarce resources,limited access to community support services , education and play spaces.","Stigma against certain ethnic groups","Erosion of social capital, disruption or limited access to basic services","There are no socio-ecological impacts"],
+            right:"2"};
+        var que2={que:"According to the brief from the Allience for Child protection in Humanitarian actions, what is the main Socio-ecological impact of COVID19 on the sociocultural norms?",
+            ans:["Erosion of social capital, disruption or limited access to basic services","There are no socio-ecological impacts of Covid19 on sociocultural norms","Break down of trust, competition of scarce resources,limited access to community support services","Stigma against certain ethnic groups"],
+            right:"3"};
+        var que3={que:" According to the brief from the Alliance for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the community?",
+            ans:["Break down of trust, competition of scarce resources,limited access to community support services , education and play spaces.","Stigma against certain ethnic groups","No socio-ecological impacts on community","There are very Small socio-ecological impacts "],    right:"0"};
+        var que4={que:"According to the brief from the Alliance  for Child Protection in Humanitarian actions,what is the main Socio-ecological impact of COVID-19 on the family?",
+            ans:["Erosion of social capital, disruption or limited access to basic services","Family separation reduced access to social supports, caregiver distress and heightened risk of violence & domestic abuse.","There are no socio-ecological impacts on  family","Stigma against certain ethnic groups"],
+            right:"1"};
+        var que5={que:"How many school days reported by the Basic Education minister are to be lost because of Covid19 interventions?",
+            ans:["The entire school year","100 school days","only 1 school day","10 school days"],
+            right:"3"};
+        var que6={que:"How is the department of Education planning to compensate for the lost days due to the Covid19 outbreak?",
+            ans:["To compensate for lost days the June holidays will be cut short by a week. Once opened schools will be encouraged to extend tuition hours.","To compensate for lost days only e-learning support will be provided immediately to every learner.","To compensate for lost days, there won't be June holidays ","There are no plans to compensate for school days lost"],
+            right:"0"};
+        var que7={que:"What 3 main school activities are now cancelled or postponed as the result of Covid19 interventions?",
+            ans:["Spelling Bee competions , Dance Competition and International trip for all school going learners","No major events were cancelled or postponed","South African School Choral Eisteddfod (SASCE), all school sports programmes and of course assemblies","International School Day celebration is the only major event cancelled"],right:"2"};
+        var que8={que:"The Department of Higher Education and Training has established a COVID-19 Team comprising of which 4 other groups?",
+            ans:["There are 3 and not 4 other groups","No group has been established as yet","The department of Health, of Finance and of Small Business Enterprises","Universities South Africa (USAF), the South African College Principals Organisation (SACPO), Department of  Health,  and Higher Health"],right:"3"};
+        var que9={que:"The Department of Science and Innovation has  established a Covid19 research team made up of which other 3 groups?",
+            ans:["Medical Reseach Council (MRC), Council for Scientific and Industrial Research (CSIR), Human Sciences Research Council (HSRC)","Universities South Africa (USAF), the South African College Principals Organisation (SACPO), Department of  Health,  and Higher Health","No other groups are part of the research team","There is not research team"],right:"0"};
+        var que10={que:"What is the role of recently established Covid19 team by the Department of Higher Education and Training?",
+            ans:["To coordinate a sector response and collate institutional case management reports","To negatiate increase of salaries for the workers in Higher Education sector","There is not specified role as yet","To confirm numbers of people who have tested positive to COVID19"],right:"0"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+</body>
+
+</html>

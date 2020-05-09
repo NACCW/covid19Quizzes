@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week2: Challenging</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+</head>
+<body>
+    <div class="front">
+        <h1>Week 2 : Challenging Quiz</h1>
+        <p>Most of the questions will be based on brief from the Alliance for Child Protection in Humanitarian Action, Basic Education and Higher Education in South Africa.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1.According to the brief from the Allience for Child protection in Humanitarian actions, what is the main Socio-ecological impact of COVID19 on the child?</p>
+        <p >Answer:<span id="a1">Heightened risk to child abuse,neglect, violence, explotation,psychologcal distress and negative impact on development </span></p>
+        <p class="qa">2. According to the brief from the Allience for Child protection in Humanitatian actions, what are some of the child protection risks observed in the current COVID-19 pandemic?</p>
+        <p >Answer:<span id="a2"> All mentioned</span></p>
+        <p class="qa">3.Multi-sectoral interventions should prioritise which of the following as a child protection response from Covid19? </p>
+        <p >Answer:<span id="a3"> All mentioned below</span></p>
+        <p class="qa">4. What actions should complement the existing actions in the Minimum Standards for Child Protection in Humanitarian Action and the Guidance Note: Protection of Children during Infectious Disease outbreaks to protect children during the COVID-19 pandemic?</p>
+        <p >Answer:<span id="a4"> In addition to mitigating risks, there should be building  on the strengths and positive coping mechanisms of communities, families, caregivers and children.</span></p>
+        <p class="qa">5. What is South Africa's Department of Health's Whatsapp line? </p>
+        <p>Answer:<span id="a5"> 0600 123456</span></p>
+        <p class="qa">6. Which 2 universities in South Africa are the first to report on their members who tested positive for Covid19?</p>
+        <p>Answer:<span id="a6">University of Cape Town and University of the Witwatersrand</span></p>
+        <p class="qa">7. On the 13th of March 2020, how many people in South Africa have tested positive for Covid19? </p>
+        <p >Answer:<span id="a7">24</span></p>
+        <p class="qa">8.On which day did Mpumalanga province announce it's first Covid19 positive case? </p>
+        <p >Answer<span id="a8">12 March 2020</span></p>
+        <p class="qa">9.When was the first not government labs confirmed Covid19 local transmission case announced?</p>
+        <p >Answer<span id="a9">15 March 2020</span></p>
+        <p class="qa">10. Who announced this case?</p>
+        <p>Answer:<span id="a10">The President</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"According to the brief from the Allience for Child protection in Humanitarian actions, what is the main Socio-ecological impact of COVID19 on the child?",
+            ans:["There are no socio-ecological impacts of Covi19 on a child","Lots of stigma against the child","Heightened risk to child abuse,neglect, violence, explotation,psychologcal distress and negative impact on development","Erosion of social capital, disruption or limited access to basic services"],
+            right:"2"};
+        var que2={que:"According to the brief from the Allience for Child protection in Humanitatian actions, what are some of the child protection risks observed in the current COVID-19 pandemic?",
+            ans:["Unaccompanied and separated children","Social exclusion","Child Labour","All mentioned"],
+            right:"3"};
+        var que3={que:"3.According to the brief from the Allience for Child protection in Humanitatian actions,multi-sectoral interventions should prioritise which of the following as a child protection response from Covid19? ",
+            ans:["All mentioned below","The Standard procedures for documenting and referring children's cases that may need follow-up","Reduce stigma and social exclusion that may result from the disease","Clear protocols to prevent/reduce family separation and other forms of child protection risks"],    right:"0"};
+        var que4={que:" What actions should complement the existing actions in the Minimum Standards for Child Protection in Humanitarian Action and the Guidance Note: Protection of Children during Infectious Disease outbreaks to protect children during the COVID-19 pandemic?",
+            ans:["Mitagate Covid19 transmission risks","In addition to mitigating Covid 19 risks,there should be building on the strengths and positive coping mechanisms of communities, families, caregivers and children.","Only support the vulnerable communities","No actions should complement the existing actions."],
+            right:"1"};
+        var que5={que:" What is South Africa's Department of Health's Whatsapp line?",
+            ans:["011 0123456","0800 123456","0600 012345","0600 123456"],
+            right:"3"};
+        var que6={que:"Which 2 universities in South Africa are the first to report on their members who tested positive for Covid19?",
+            ans:["University of Cape Town and University of the Witwatersrand","University of the Western Cape and University of the Witwatersrand ","North West University and Stellenbosch University","University of Limpopo and University of Mpumalanga"],
+            right:"0"};
+        var que7={que:"On the 13th of March 2020, how many people in South Africa have tested positive for Covid19?",
+            ans:["12","240","24","48"],right:"2"};
+        var que8={que:"On which day did Mpumalanga province announce it's first Covid19 positive case?",
+            ans:["12 March 2019","01 March 2020","13 March 2020","12 March 2020"],right:"3"};
+        var que9={que:"When was the first not government labs confirmed Covid19 local transmission case announced?",
+            ans:["15 March 2020","10 March 2020","01 January 2020","25 December 2019"],right:"0"};
+        var que10={que:"Who announced this case?",
+            ans:["The President","Department of health spokesperson","Minister of health","The case was not announced"],right:"0"};
+
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+</body>
+
+</html>

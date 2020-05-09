@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week5: Easy</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 5 :  Quiz</h1>
+        <p>Most of the questions will be based on the National Statistics on Covid-19 and the Presidency's Statements on the escalation of measures to combat COVID-19 epidemic.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. Community health teams will focus on expanding screening and testing. Which residential areas will they focus on first?</p>
+        <p >Answer:<span id="a1">First focus will be on high density and high-risk areas. </span></p>
+        <p class="qa">2. On the 27th of March 2020, the National Covid-19 website  reported the highest number of positive cases tested for Covid-19 - what was the number ? </p>
+        <p >Answer:<span id="a2"> 243 </p>
+        <p class="qa">3. In the context of Covid-19, what is the Temporary Employee Relief Scheme?</p>
+        <p >Answer:<span id="a3"> It is a special dispensation that will enable companies to pay employees directly during this lockdown period and avoid retrenchment</span></p>
+        <p class="qa">4. Through the Compensation Fund, which type of employee falling ill through exposure at their workplace will be paid?</p>
+        <p >Answer:<span id="a4">Any employee</span></p>
+        <p class="qa">5. Is it true that commercial banks have been exempted from provisions of the Competition Act to enable them to develop common approaches to debt relief and other necessary measures?</p>
+        <p>Answer:<span id="a5"> Yes, it's very true</span></p>
+        <p class="qa">6. Using the tax system, how will the government be assisting businesses in the private sector that may be in distress during this National lock-down?</p>
+        <p>Answer:<span id="a6"> A tax subsidy will be provided of up to R500 per month for the next four months for those private sector employees earning below R6,500  under the Employment Tax Incentive</span></p>
+        <p class="qa">7. Approximately how many workers will this intervention help? </p>
+        <p >Answer:<span id="a7">4 million workers</span></p>
+        <p class="qa">8. Which 2 provinces recorded their first Covi19 positive cases this week? </p>
+        <p >Answer<span id="a8">The Northern Cape and the North West</span></p>
+        <p class="qa">9. According to wikipedia how many deaths from Covid 19 has South Africa recorded this week?</p>
+        <p >Answer<span id="a9">2</span></p>
+        <p class="qa">10. Is it true that The Department of Small Business Development has made over R500 million available immediately to assist small and medium enterprises that are in distress through a simplified application process ?</p>
+        <p>Answer:<span id="a10">Yes, it's true </p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"Community health teams will focus on expanding screening and testing. Which residential areas will they focus on first?",
+            ans:["On the smaller populated areas, so they can finish testing quicker","On the high income earning areas","First focus will be on high density and high-risk areas","On all the informal areas in Limpopo"],
+            right:"2"};
+        var que2={que:"On the 27th of March 2020, the National Covid-19 website  reported the highest number of positive cases tested for Covid-19 - what was the number ?  ",
+            ans:["400","100","1900","243"],
+            right:"3"};
+        var que3={que:"In the context of Covid-19, what is the Temporary Employee Relief Scheme?",
+            ans:["It is a special dispensation that will enable companies to pay employees directly during this lockdown period and avoid retrenchment","It's a special type of payment only made to temporary employees","It's a new way of compensating employees for that are working temporarily during this lock down","It's the only way that every employee gets compensated during this temporary nationwide lock-down"],    right:"0"};
+        var que4={que:"Through the Compensation Fund, which type of employee falling ill through exposure at their workplace will be paid?",
+            ans:["Only the healthcare employees","Any employee","Only healthcare employees in the public sector","Only the the employees in the public financial sector"],
+            right:"1"};
+        var que5={que:"Is it true that commercial banks have been exempted from provisions of the Competition Act to enable them to develop common approaches to debt relief and other necessary measures?",
+            ans:["I am not sure","I don't know","No, it's not true","Yes, it's very true"],
+            right:"3"};
+        var que6={que:"Using the tax system, how will the government be assisting businesses in the private sector that may be in distress during this National lock-down?",
+            ans:["A tax subsidy will be provided of up to R500 per month for the next four months for those private sector employees earning below R6,500  under the Employment Tax Incentive","A tax subsidy will be provided of up to R500 per month for the next four months for those private sector employees earning below R9,500  under the Employment Act enaction","A tax subsidy will be provided of up to R5000 per month for the next four months for those private sector employees earning below R6,500  under the Employment Tax Incentive","A tax subsidy will be provided of up to R500 per month for the next twelve months for those private sector employees earning below R6,500  under the Employment Tax Incentive"],
+            right:"0"};
+        var que7={que:"Approximately how many workers will this intervention help? ",
+            ans:["All the workers in South Africa","40 million workers","4 million workers","40 000 workers"],right:"2"};
+        var que8={que:"Which 2 provinces recorded their first Covi19 positive cases this week?",
+            ans:["The Northern Cape and the Eastern Cape","Gauteng and  North West "," The Northern Cape and Limpopo","The Northern Cape and the North West "],right:"3"};
+        var que9={que:" According to wikipedia how many deaths from Covid 19 has South Africa recorded this week?",
+            ans:["2"," 200","9" ,"10 "],right:"0"};
+        var que10={que:"Is it true that The Department of Small Business Development has made over R500 million available immediately to assist small and medium enterprises that are in distress through a simplified application process ? ",
+            ans:["I am sure it's not true","I don't think it is true, is it?","Not true","Yes, it's true"],right:"3"};
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit about Covi19. But don't stop learning, keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! Look's like you have read referenced material and you have knowledge about the Covid-19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+   
+
+</body>
+
+
+</html>

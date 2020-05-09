@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 2:Easy</title>
+    <title>Week1: Easy</title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
@@ -12,9 +12,10 @@
 </head>
 <body>
     <div class="front">
-        <h1>Week 2 : Easy Quiz</h1>
+        <h1>Week 1 : Easy Quiz</h1>
         <img src="image.png" class="responsive">
-        <button type="button" id="start">Start</button>    
+        <button type="button" id="start">Start</button>
+        <a href="index.html"><button type="button" id="start">Back</button> </a>   
     </div>
     <div class="quiz">
         <p id="num"></p>
@@ -25,7 +26,7 @@
             <div id="op3"></div>
             <div id="op4"></div>
         </div><br>
-       <button type="button" id="sub">Submit</button>
+        <button type="button" id="sub">Submit</button>
     </div>
     <div class="result" >
         <div class="score"></div>
@@ -34,26 +35,27 @@
         <button type="button" id="an">Click here to see answers</button>
     </div>
     <div class="answers">
-        <p class="qa">1.</p>
-        <p >Answer:<span id="a1"> </span></p>
-        <p class="qa">2.</p>
-        <p >Answer:<span id="a2"> </p>
-        <p class="qa">3. </p>
-        <p >Answer:<span id="a3"> </span></p>
-        <p class="qa">4.</p>
-        <p >Answer:<span id="a4"> </span></p>
-        <p class="qa">5. </p>
-        <p>Answer:<span id="a5"> </span></p>
-        <p class="qa">6.  </p>
-        <p>Answer:<span id="a6"></span></p>
-        <p class="qa">7. </p>
-        <p >Answer:<span id="a7"></span></p>
-        <p class="qa">8. </p>
-        <p >Answer<span id="a8"></span></p>
-        <p class="qa">9.</p>
-        <p >Answer<span id="a9"></span></p>
-        <p class="qa">10.</p>
-        <p>Answer:<span id="a10"></p>
+        <p class="qa">1.Covid19 is a short name  for which below?</p>
+        <p >Answer:<span id="a1"> Coronavirus Disease 2019</span></p>
+        <p class="qa">2.In which country was Covid19 first identified ?</p>
+        <p >Answer:<span id="a2"> China </p>
+        <p class="qa">3. In which city was Covid19 first identified? </p>
+        <p >Answer:<span id="a3"> Wuhan </span></p>
+        <p class="qa">4.When was the first confirmed positive case for Covid19 in South Africa?</p>
+        <p >Answer:<span id="a4"> 05 March 2020 </span></p>
+        <p class="qa">5.Which is NOT a symptom of Covid19?</p>
+        <p>Answer:<span id="a5"> Itchy eyes</span></p>
+        <p class="qa">6.Gauteng airports screen what in travellers to identify risks? </p>
+        <p>Answer:<span id="a6">Body Temperature</span></p>
+        <p class="qa">7.Which human race can not get infected with Covid19</p>
+        <p >Answer:<span id="a7">None</span></p>
+        <p class="qa">8.How can you can help limit COVID-19 transmission?</p>
+        <p >Answer<span id="a8">All mentioned</span></p>
+        <p class="qa">9.Why does the government use  quarantines?</p>
+        <p >Answer<span id="a9">To stop the spread of contagious diseases</span></p>
+
+        <p class="qa">10.Which department reports Official Information about Corona virus?</p>
+        <p>Answer:<span id="a10">Department of Health</p>
             <br>
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
     </div>
@@ -66,32 +68,31 @@
         var right;
         var i=0;
         var score=0;
-        var que1={que:"",
-            ans:["","",""],
-            right:"2"};
-        var que2={que:"",
-            ans:["","","",""],
-            right:"3"};
-        var que3={que:" ",
-            ans:["","","",""],    right:"0"};
-        var que4={que:"",
-            ans:["","","",""],
+        var que1={que:" Covid19 is a short name  for which below?",
+            ans:["Common video of 2019","Coronavirus Disease 2019","Coronary Disease 19","Covid Disease 19"],
             right:"1"};
-        var que5={que:"",
-            ans:["","","",""],
+        var que2={que:"In which country was Covid19 first identified ?",
+            ans:["Zimbabwe","Italy","South Africa","China"],
             right:"3"};
-        var que6={que:"",
-            ans:["","","",""],
+        var que3={que:" In which city was Covid19 first identified?",
+            ans:["Wuhan","Cape Town","London","New York"],    right:"0"};
+        var que4={que:"When was the first confirmed positive case for Covid19 in South Africa?",
+            ans:["31 December 2019","05 March 2020","25 December 2019","14 February 2020"],
+            right:"1"};
+        var que5={que:"Which is NOT a common symptom of Covid19?",
+            ans:["Dry cough","Fatigue","Fever","Itchy eyes"],
+            right:"3"};
+        var que6={que:"Airports in South Africa screen what in travellers to identify risks?",
+            ans:["Body Temperature","Skin Pigmentation","Eyes","Urine"],
             right:"0"};
-        var que7={que:"",
-            ans:["","","",""],right:"2"};
-        var que8={que:"",
-            ans:["","","",""],right:"3"};
-        var que9={que:"",
-            ans:["","","",""],right:"0"};
-        var que10={que:"",
-            ans:["","","",""],right:"0"};
-
+        var que7={que:"Which human race can not get infected with Covid19",
+            ans:["Coloured","Black","None","White"],right:"2"};
+        var que8={que:"How can you help limit COVID-19 transmission?",
+            ans:["Cover up when you cough or sneeze","Stay home when you are sick","Avoid touching your eyes, nose, and mouth with unwashed hands","All mentioned"],right:"3"};
+        var que9={que:"Why does the government use  quarantines?",
+            ans:["To stop the spread of contagious diseases","To keep people away from animals","Government does not use quarantines","I do not know"],right:"0"};
+        var que10={que:"Which department reports Official Information about Corona virus?",
+            ans:["Deparment of Health","Department of Education","My Department","Department of Home Affairs"],right:"0"};
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
         $("#start").click(function(){
@@ -195,6 +196,7 @@
     });
     
     </script>
+   
 </body>
 
 

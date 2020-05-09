@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week3:Challenging</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 3 : Challenging Quiz</h1>
+        <p>Most of the questions will be based on the Covid19 brief from IASC(Inter Agency Standing Committee) and on the briefing from the Public Taxi Industry about Covid19 in South Africa.</p>
+        <img src="image.png" class="responsive">
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1. According to the IASC(Inter Agency Standing Committee) document,how should the general public deal with stress during the COvid19 outbreak?</p>
+        <p >Answer:<span id="a1"> All mentioned</span></p>
+        <p class="qa">2. According to the IASC(Inter Agency Standing Committee) document,how should people working in the COVID-19 response be supported?</p>
+        <p >Answer:<span id="a2"> All mentioned below </p>
+        <p class="qa">3.According to the IASC(Inter Agency Standing Committee)document,what activities will support adults' wellbeing during home isolation , social distancing or quarantine?</p>
+        <p >Answer:<span id="a3"> All mentioned</span></p>
+        <p class="qa">4. According to the IASC(Inter Agency Standing Committee) document,what activities should adults/caregivers give to  children during home isolation/quarantine?</p>
+        <p >Answer:<span id="a4"> All mentioned </span></p>
+        <p class="qa">5. According to the IASC(Inter Agency Standing Committee) document,which barriers are people with disabilities likely to face during a COVID-19 outbreak?</p>
+        <p>Answer:<span id="a5"> All mentioned below</span></p>
+        <p class="qa">6. According to the IASC(Inter Agency Standing Committee) document,why are older adults particularly vulnerable to COVID-19 ?</p>
+        <p>Answer:<span id="a6">All mentioned</span></p>
+        <p class="qa">7. The South African National Taxi Council spoke about their response to covid19, as there is an estimate of how many public taxi commuters in South Africa?</p>
+        <p >Answer:<span id="a7">16.5 million</span></p>
+        <p class="qa">8.What is the name of the document serving as a minimum blueprint to ensure facilities in the taxi industry are coronavirus free?</p>
+        <p >Answer<span id="a8">Coronavirus Protocol of Santago</span></p>
+        <p class="qa">9. Which structures will monitor the implementation of the Coronavirus Protocol of Santago?</p>
+        <p >Answer<span id="a9">National and all provincial Santago centers</span></p>
+        <p class="qa">10.What appeal was made to the taxi drivers by the Chairman of Santago?</p>
+        <p>Answer:<span id="a10">Nobody should be moved from your taxi just because they are suspected to have coronavirus</p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"According to the IASC(Inter Agency Standing Committee) document,how should the general public deal with stress during the COvid19 outbreak?",
+            ans:["Talk to people you trust. Contact your friends and family.","Don’t use tobacco, alcohol or other drugs to cope with your emotions","Decrease the time you and your family spending watching or listening to upsetting media coverage.","All mentioned above"],
+            right:"3"};
+        var que2={que:"According to the IASC(Inter Agency Standing Committee) document,how should people working in the COVID-19 response be supported?",
+            ans:["All mentioned below","keeping all staff protected from chronic stress and poor mental health during this response means that they will have a better capacity to fulfil their roles– whether health workers or in allied supporting role","Ensure good quality communication and accurate information updates are provided to all","Ensure that there is enough capacity for the staff to get the rest and recuperation when they need to."],
+            right:"0"};
+        var que3={que:"According to the IASC(Inter Agency Standing Committee) document,what activities will support adults' wellbeing during home isolation , social distancing or quarantine? ",
+            ans:["Physical exercise (e.g. yoga, tai chi, stretching)","Relaxation exercises (e.g. breathing, meditation, mindfulness)","Cognitive exercises","All mentioned"],    right:"3"};
+        var que4={que:"According to the IASC(Inter Agency Standing Committee),what activities should adults/caregivers give to  children during home isolation/quarantine?",
+            ans:["hand washing games with rhymes","Imaginary stories about the virus exploring the body","Make cleaning and disinfecting the house into a fun game","All mentioned"],
+            right:"3"};
+        var que5={que:"According to the IASC(Inter Agency Standing Committee) document,which barriers are people with disabilities likely to face during a COVID-19 outbreak?",
+            ans:["All mentioned below","Environmental barriers","Attitudinal barriers","Institutional barriers"],
+            right:"0"};
+        var que6={que:"According to the IASC(Inter Agency Standing Committee) document,why are older adults particularly vulnerable to COVID-19 ?",
+            ans:["Their  information sources are limited","They have weaker immune systems","All mentioned","They are likely to have medical and daily living needs"],
+            right:"0"};
+        var que7={que:"The South African National Taxi Council spoke about their response to covid19, as there is an estimate of how many public taxi commuters in South Africa?",
+            ans:["No public taxi commuters in SA","1 milliom","16.5 million"," 10 000 public taxi commuters"],right:"2"};
+        var que8={que:"What is the name of the document serving as a minimum blueprint to ensure facilities in the taxi industry are coronavirus free?",
+            ans:["No document has been made by the taxi council in response to Covid19","The bill of passagers rights","Santago Protocol on Coronavirus ","Coronavirus Protocol of Santago"],right:"3"};
+        var que9={que:"Which structures will monitor the implementation of the Coronavirus Protocol of Santago? ",
+            ans:["National and all provincial Santago centers ","Only National Santago centers","Only district main taxi ranks","NO centers have been identified as yet"],right:"0"};
+        var que10={que:"What appeal was made to the taxi drivers by the Chairman of Santago?",
+            ans:["Nobody should be moved from your taxi just because they are suspected to have coronavirus","Do not touch money from passangers without wearing gloves","Sanitize  hands of passangers before they pay ","Passangers with feverish symptomps should pay lesser than the other passangers"],right:"0"};
+
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+</body>
+
+</html>

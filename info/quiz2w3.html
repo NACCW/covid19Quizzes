@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week3: Normal</title>
+    <link  href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
+    <link rel="icon"  type="image/png"   href="naccw.jpeg">
+    
+</head>
+<body>
+    <div class="front">
+        <h1>Week 3 : Normal Quiz</h1>
+        <p>Most of the questions will be based on the Covid19 brief from IASC(Inter Agency Standing Committee) and the Consumer responses to Covid19 in South Africa.</p>
+        <img src="image.png" class="responsive">
+        
+        <button type="button" id="start">Start</button>    
+    </div>
+    <div class="quiz">
+        <p id="num"></p>
+        <div id="q"></div><div class="arrow"></div><br>
+        <div class="radio">
+            <div id="op1"></div>
+            <div id="op2"></div>
+            <div id="op3"></div>
+            <div id="op4"></div>
+        </div><br>
+        <button type="button" id="sub">Submit</button>
+    </div>
+    <div class="result" >
+        <div class="score"></div>
+        <br>
+        <div class="message"></div>
+        <button type="button" id="an">Click here to see answers</button>
+    </div>
+    <div class="answers">
+        <p class="qa">1.According to the Covid19 brief from the IASC(Inter Agency Standing Committee), frontline  healthcare workers (including nurses, doctors, ambulance drivers, case identifiers, and others) may experience which type of stressors during this COVID-19 outbreak?</p>
+        <p >Answer:<span id="a1"> All mentioned</span></p>
+        <p class="qa">2.What long-term consequences within communities and families could the constant fear, worry and stressors in the population during the COVID-19 outbreak lead to? </p>
+        <p >Answer:<span id="a2"> People with developing or existing mental health and substance use disorders experiencing relapses and other negative outcomes because they are avoiding health facilities or unable to access their care providers</p>
+        <p class="qa">3. According to the Covid19 brief from the IASC(Inter Agency Standing Committee), what other 3 things contribute to fears and reactions in the population during the Covid19 outbreak ?</p>
+        <p >Answer:<span id="a3"> Lack of knowledge,rumours and misinformation</span></p>
+        <p class="qa">4.Who is associated with Covid19 social stigma?</p>
+        <p >Answer:<span id="a4">Persons who have been infected, their family members and health care and other frontline workers. </span></p>
+        <p class="qa">5.In which ways could we show great altruism and cooperation during this COVID-19 outbreak in helping others?</p>
+        <p>Answer:<span id="a5">All mentioned </span></p>
+        <p class="qa">6. Which Council reassured the public that there is no reason for panic buying as there is enough stock? </p>
+        <p>Answer:<span id="a6">Sustainability, Legal  & Regulatory Executive at the Consumer Goods Council  of South Africa</span></p>
+        <p class="qa">7. What is the negative impact of the panic buying on the retail industry</p>
+        <p >Answer:<span id="a7">Putting a great strain on retailers and disrupting  the supply chain</span></p>
+        <p class="qa">8. In which areas is the panic buying more likely to take place? </p>
+        <p >Answer<span id="a8">Affluent Higher (LSM)Living Standard Measure group</span></p>
+        <p class="qa">9.Where should one report fake news about the goods to be bought or price collisions on those goods in time of Covid19 outbreak? </p>
+        <p >Answer<span id="a9">The National Consumer commission and Competition commission</span></p>
+        <p class="qa">10.What advice was given to business owners and consumers on shopping during this Covid19 outbreak?</p>
+        <p>Answer:<span id="a10">To business owners:  This is not the time to be opportunistic, To Consumers:Stop spreading fake news, remain calm, shop considerably and support each other during this process </p>
+            <br>
+            <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
+    </div>
+    
+
+    <script>
+         $(document).ready(function(){
+        var que;
+        var ans;
+        var right;
+        var i=0;
+        var score=0;
+        var que1={que:"According to the Covid19 brief from the IASC(Inter Agency Standing Committee), frontline  healthcare workers (including nurses, doctors, ambulance drivers, case identifiers, and others) may experience which type of stressors during this COVID-19 outbreak?",
+            ans:["Stigmatization towards those working with COVID-19 patients and their remains","Insufficient personal or energy capacity to implement basic self-care","Insufficient information about the long-term exposure to individuals infected by COVID-19","All mentioned"],
+            right:"3"};
+        var que2={que:"What long-term consequences within communities and families could the constant fear, worry and stressors in the population during the COVID-19 outbreak lead to?",
+            ans:["Fear that frontline workers will pass COVID-19 onto their friends and family as a result of their work","There are no potential long term effects of this whole thing","Stigmatization towards those working with COVID-19 patients","People with developing or existing mental health and substance use disorders experiencing relapses and other negative outcomes because they are avoiding health facilities or unable to access their care providers"],
+            right:"3"};
+        var que3={que:" According to the Covid19 brief from the IASC(Inter Agency Standing Committee), what other 3 things contribute to fears and reactions in the population during the Covid19 outbreak ?",
+            ans:["Lack of knowledge,rumours and misinformation","fake news, internet and gossip","Lack on information only","Lack of information and misinformation only"],    right:"0"};
+        var que4={que:".Who is associated with Covid19 social stigma?",
+            ans:["Only health care and other frontline workers","Persons who have been infected, their family members and health care and other frontline workers.","Only the infected person","No one"],
+            right:"1"};
+        var que5={que:"In which ways could we show great altruism and cooperation during this COVID-19 outbreak in helping others?",
+            ans:["Maintaining social contact with people who might be isolated using phone calls or text messages","Sharing key factual messages within the community, especially with individuals who don’t use social media","Providing care and support to people who have been separated from their families and caregivers","All mentioned "],
+            right:"3"};
+        var que6={que:"Which Council reassured the public that there is no reason for panic buying as there is enough stock?",
+            ans:["The Consumer council","Sustainability, Legal  & Regulatory Executive at the Consumer Goods Council  of South Africa","The Pan African Council","The Main Research Council"],
+            right:"1"};
+        var que7={que:"What is the negative impact of the panic buying on the retail industry",
+            ans:["Buying on credit","Bankruption","Putting a great strain on retailers and disrupting  the supply chain","Shortages of stock to provide to everyone"],right:"1"};
+        var que8={que:"In which areas is the panic buying more likely to take place? ",
+            ans:["In the middle income earning communities","There is no such thing as panic buying","The lower income earning groups","Affluent Higher (LSM)Living Standard Measure group"],right:"3"};
+        var que9={que:"Where should one report fake news about the goods to be bought or price collisions on those goods in time of Covid19 outbreak? ",
+            ans:["The South African Legal Aid","The South African Police Services","The National Consumer commission and Competition commission","The Presidency"],right:"2"};
+        var que10={que:"What advice was given to business owners and consumers on shopping during this Covid19 outbreak?",
+            ans:["To business owners:  This is not the time to be opportunistic, To Consumers:Stop spreading fake news, remain calm, shop considerably and support each other during this process ","No advice was given","To business owners: Stop spreading fake news, To Consumers: This is not the time to be opportunistic","To Consumers: Shop online only, No advice was given to business owners"],right:"0"};
+
+        var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
+        var wrong=[];
+        $("#start").click(function(){
+            $(".front").hide();
+            $("#sub").show();
+            $(".quiz").show();
+            $("#num").text(i+1+"/"+quelst.length)
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            
+        });
+        $("#sub").click(function(){
+            
+            
+            if($("input[name='opt']:checked").val()!=null){
+                if($("input[name='opt']:checked").val()==quelst[i].right){
+                    score++;
+                }
+                else{
+                    wrong.push(i);
+                }   
+                $("#sub").hide();
+                $(".score").text(score);
+                if(i!=quelst.length-1){
+                next();
+                }
+                else{
+                    reslt();
+                }
+
+            }
+            else{
+                $(".p").text("Select One option");
+            }
+        });
+        function next(){
+            if(i!=(quelst.length)-1){
+                    i++;
+                }
+            $("#q").text(quelst[i].que);
+            $("#op1").html("<input type='radio' name='opt' id='o1' value='0'><label for='o1'>"+quelst[i].ans[0])+"</label>";
+            $("#op2").html("<input type='radio' name='opt' id='o2' value='1'><label for='o2'>"+quelst[i].ans[1])+"</label>";
+            $("#op3").html("<input type='radio' name='opt' id='o3' value='2'><label for='o3'>"+quelst[i].ans[2])+"</label>";
+            $("#op4").html("<input type='radio' name='opt' id='o4' value='3'><label for='o4'>"+quelst[i].ans[3])+"</label>";
+            $("#num").text(i+1+"/"+quelst.length);
+            $("#sub").show();
+            }
+        function reslt(){
+            $(".quiz").hide();
+            $(".result").show();
+            $(".score").text(score+"/"+quelst.length);
+            if(score<=4){
+                $(".message").text("Oh no, I am worried!! You need to do better, Use learn references and others to get informed - as soon as possible.");
+            }
+            else if(score<8){
+                $(".message").text("Good, you know quite a bit. But don't stop keeping yourself informed.");
+            }
+            else{
+                $(".message").text("Amazing! you have knowledge about the Covid19 outbreak in South Africa.Keep being informed.");
+            }
+        }
+        $("#an").click(function(){
+            $(".result").hide();
+            $(".answers").show();
+            if((wrong.toString()).search("0")!=-1){
+                $("#a1").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("1")!=-1){
+                $("#a2").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("2")!=-1){
+                $("#a3").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("3")!=-1){
+                $("#a4").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("4")!=-1){
+                $("#a5").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("5")!=-1){
+                $("#a6").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("6")!=-1){
+                $("#a7").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("7")!=-1){
+                $("#a8").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("8")!=-1){
+                $("#a9").css('color','#ff6347');
+            }
+            if((wrong.toString()).search("9")!=-1){
+                $("#a10").css('color','#ff6347');
+            }
+            
+        });
+        
+    });
+    
+    </script>
+</body>
+
+
+</html>

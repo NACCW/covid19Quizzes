@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week1: Easy</title>
+    <title>Week1:Normal</title>
     <link  href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet">
@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class="front">
-        <h1>Week 1 : Easy Quiz</h1>
+        <h1>Week 1 : Normal Quiz</h1>
+
         <img src="image.png" class="responsive">
         <button type="button" id="start">Start</button>    
     </div>
@@ -34,27 +35,26 @@
         <button type="button" id="an">Click here to see answers</button>
     </div>
     <div class="answers">
-        <p class="qa">1.Covid19 is a short name  for which below?</p>
-        <p >Answer:<span id="a1"> Coronavirus Disease 2019</span></p>
-        <p class="qa">2.In which country was Covid19 first identified ?</p>
-        <p >Answer:<span id="a2"> China </p>
-        <p class="qa">3. In which city was Covid19 first identified? </p>
-        <p >Answer:<span id="a3"> Wuhan </span></p>
-        <p class="qa">4.When was the first confirmed positive case for Covid19 in South Africa?</p>
-        <p >Answer:<span id="a4"> 05 March 2020 </span></p>
-        <p class="qa">5.Which is NOT a symptom of Covid19?</p>
-        <p>Answer:<span id="a5"> Itchy eyes</span></p>
-        <p class="qa">6.Gauteng airports screen what in travellers to identify risks? </p>
-        <p>Answer:<span id="a6">Body Temperature</span></p>
-        <p class="qa">7.Which human race can not get infected with Covid19</p>
-        <p >Answer:<span id="a7">None</span></p>
-        <p class="qa">8.How can you can help limit COVID-19 transmission?</p>
-        <p >Answer<span id="a8">All mentioned</span></p>
-        <p class="qa">9.Why does the government use  quarantines?</p>
-        <p >Answer<span id="a9">To stop the spread of contagious diseases</span></p>
-
-        <p class="qa">10.Which department reports Official Information about Corona virus?</p>
-        <p>Answer:<span id="a10">Department of Health</p>
+        <p class="qa">1.Which province recorded the first positive case for Covid19?</p>
+        <p >Answer:<span id="a1"> </span></p>
+        <p class="qa">2. Which country in Europe did the 1st infected person travel to? </p>
+        <p >Answer:<span id="a2"> Italy</p>
+        <p class="qa">3. How many South African's from the Italy tour group tested positive for Covid19 on the 8th of March 2020? </p>
+        <p >Answer:<span id="a3">7 </span></p>
+        <p class="qa">4. What is the age group of most of the South Africans who tested positive for Covid19 from Italy?</p>
+        <p >Answer:<span id="a4"> 30 -39 </span></p>
+        <p class="qa">5. How should you wash your hands as a preventative measure against contracting Covid19?</p>
+        <p>Answer:<span id="a5"> Wash your hands regularly with soap and running water for 20 seconds</span></p>
+        <p class="qa">6. What is the easiest way to know 20 seconds when washing your hands? </p>
+        <p>Answer:<span id="a6"> The easiest way to know how long 20 seconds are, is to sing ‘happy birthday’ two times or to sing the first verse of our national anthem, Nkosi Sikelel' iAfrika.</span></p>
+        <p class="qa">7. Is regularly washing your bare hands with soap offering more protection against catching the COVID-19 than wearing gloves? </p>
+        <p >Answer:<span id="a7">Yes</span></p>
+        <p class="qa">8. What are the 3 common major symptomps of Covid19?</p>
+        <p >Answer<span id="a8">Difficutly breathing,Cough,Fever</span></p>
+        <p class="qa">9. What is the name of the public institute that confirms laboratory testing of Covid19 ? </p>
+        <p >Answer<span id="a9">The National Institute for Communicable Diseases</span></p>
+        <p class="qa">10. What is the Official Toll Free Call Center number for Covid19 information?</p>
+        <p>Answer:<span id="a10">0800 029 999</p>
             <br>
             <a href="quizzes.html"><button type="button" id="an">Go Back to Quizzes</button></a>
     </div>
@@ -67,31 +67,31 @@
         var right;
         var i=0;
         var score=0;
-        var que1={que:" Covid19 is a short name  for which below?",
-            ans:["Common video of 2019","Coronavirus Disease 2019","Coronary Disease 19","Covid Disease 19"],
-            right:"1"};
-        var que2={que:"In which country was Covid19 first identified ?",
-            ans:["Zimbabwe","Italy","South Africa","China"],
-            right:"3"};
-        var que3={que:" In which city was Covid19 first identified?",
-            ans:["Wuhan","Cape Town","London","New York"],    right:"0"};
-        var que4={que:"When was the first confirmed positive case for Covid19 in South Africa?",
-            ans:["31 December 2019","05 March 2020","25 December 2019","14 February 2020"],
-            right:"1"};
-        var que5={que:"Which is NOT a common symptom of Covid19?",
-            ans:["Dry cough","Fatigue","Fever","Itchy eyes"],
-            right:"3"};
-        var que6={que:"Airports in South Africa screen what in travellers to identify risks?",
-            ans:["Body Temperature","Skin Pigmentation","Eyes","Urine"],
+        var que1={que:"Which province recorded the first positive case for Covid19?",
+            ans:["KwaZulu Natal","Western Cape "," Free State","Gauteng"],
             right:"0"};
-        var que7={que:"Which human race can not get infected with Covid19",
-            ans:["Coloured","Black","None","White"],right:"2"};
-        var que8={que:"How can you help limit COVID-19 transmission?",
-            ans:["Cover up when you cough or sneeze","Stay home when you are sick","Avoid touching your eyes, nose, and mouth with unwashed hands","All mentioned"],right:"3"};
-        var que9={que:"Why does the government use  quarantines?",
-            ans:["To stop the spread of contagious diseases","To keep people away from animals","Government does not use quarantines","I do not know"],right:"0"};
-        var que10={que:"Which department reports Official Information about Corona virus?",
-            ans:["Deparment of Health","Department of Education","My Department","Department of Home Affairs"],right:"0"};
+        var que2={que:"Which country in Europe did the 1st infected person travel to?",
+            ans:["Crotia","Sweden","Spain","Italy"],
+            right:"3"};
+        var que3={que:" How many South African's from the Italy tour group tested positive for Covid19 on the 8th of March 2020?",
+            ans:["7","9","10","3"],    right:"0"};
+        var que4={que:"What is the age group of most of the South Africans who tested positive for Covid19 from Italy? ",
+            ans:["10-20","30-39","40-50","60 - 70"],
+            right:"1"};
+        var que5={que:"How should you wash your hands as a preventative measure against contracting Covid19?",
+            ans:["Wash your hands with hot water only","Wash your hand without soap","Wash your hands regularly with soap and running water for 20 seconds","Only use sanitizer to wash your hands"],
+            right:"2"};
+        var que6={que:"What is the easiest way to know 20 seconds when washing your hands?",
+            ans:["The easiest way to know how long 20 seconds are, is to sing ‘happy birthday’ two times or to sing the first verse of our national anthem, Nkosi Sikelel' iAfrika.","Set alarm","Ask to be reminded after 20 seconds","Sing the whole national anthem"],
+            right:"0"};
+        var que7={que:"Is regularly washing your bare hands with soap offering more protection against catching the COVID-19 than wearing gloves",
+            ans:["Maybe","No","Yes","I do not know"],right:"2"};
+        var que8={que:"What are the 3 common major symptomps of Covid19?",
+            ans:["Fever, weightloss and red eyes","Fever and Weightloss,","Cough, red eyes and trouble sleeping","Difficutly breathing,Cough,Fever"],right:"3"};
+        var que9={que:"What is the name of the public institute that confirms laboratory testing of Covid19 ?",
+            ans:["The Institute of Race and Relations","The National Institute for Communicable Diseases","The National Institude of Medicine","South African Institute"],right:"1"};
+        var que10={que:"What is the Official Toll Free Call Center number for Covid19 information?",
+            ans:["0800 029 999","08000 10 111","0800 999 999","012 029 999"],right:"0"};
         var quelst=[que1,que2,que3,que4,que5,que6,que7,que8,que9,que10];
         var wrong=[];
         $("#start").click(function(){
@@ -195,6 +195,7 @@
     });
     
     </script>
+
 </body>
 
 
